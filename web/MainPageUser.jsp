@@ -39,7 +39,7 @@
 
 								</ul>
 							</li>
-							<li><a href="index.html" class="button">Log Out</a></li>
+							<li><a href="logout.jsp" class="button">Log Out</a></li>
 						</ul>
 					</nav>
 				</header>
