@@ -98,7 +98,7 @@ private JDBCUtility jdbcUtility;
             response.sendRedirect(request.getContextPath() + "/MainPageAdmin.jsp");
         }
         else {
-            response.sendRedirect(request.getContextPath() + "/AdminHomePage.jsp");
+            response.sendRedirect(request.getContextPath() + "/NonExists.html");
         }            
     }
 
