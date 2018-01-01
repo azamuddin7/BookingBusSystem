@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @author MSI
  */
 public class User implements Serializable {
-    private String username, password, usertype, fullName, image;
+    private String username, password, usertype, fullName, image, email;
 
     /**
      * @return the login
@@ -81,5 +81,13 @@ public class User implements Serializable {
      */
     public void setImage(String image) {
         this.image = image;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+    
+    public void setEmail(String Email) {
+        this.email = email;
     }
 }

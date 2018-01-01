@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package admin;
+package user;
 
 import bean.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,10 +24,19 @@ import jdbc.JDBCUtility;
  *
  * @author Ahmad Azamuddin
  */
-@WebServlet(name = "AdminLogin", urlPatterns = {"/AdminLogin"})
-public class AdminLogin extends HttpServlet {
-    
-private JDBCUtility jdbcUtility;
+@WebServlet(name = "UpdateProfileServlet", urlPatterns = {"/UpdateProfileServlet"})
+public class UpdateProfileServlet extends HttpServlet {
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    private JDBCUtility jdbcUtility;
     private Connection con;
     
     public void init() throws ServletException
@@ -46,7 +55,7 @@ private JDBCUtility jdbcUtility;
 
         jdbcUtility.jdbcConnect();
         con = jdbcUtility.jdbcGetConnection();
-    }    
+    }        
 
     /**
      * Processes requests for both HTTP
@@ -61,52 +70,65 @@ private JDBCUtility jdbcUtility;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        User user = null;
-        
-        //Get the session object
-	HttpSession session = request.getSession();
-        
+        //get form data from VIEW > V-I
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String userType = "", fullName = "", image = "";
+        String fullName = request.getParameter("fullname");
+        String userType = "client";
+        String email = request.getParameter("email");
         
-        String sqlQuery = "SELECT * FROM user WHERE username = ? AND password = ? AND usertype = 'admin'";
+        String sqlUpdate = "UPDATE user SET password = ?, usertype = ?, fullname = ?,email = ? WHERE username = ?"; 
         
         try {
-            PreparedStatement preparedStatement = con.prepareStatement(sqlQuery);
-            preparedStatement.setString(1, username);
-            preparedStatement.setString(2, password);
-            ResultSet rs = preparedStatement.executeQuery();
+            PreparedStatement preparedStatement = con.prepareStatement(sqlUpdate);
+            preparedStatement.setString(1, password);
+            preparedStatement.setString(2, userType);
+            preparedStatement.setString(3, fullName);
+            preparedStatement.setString(4, email);
+            preparedStatement.setString(5, username);
+            preparedStatement.executeUpdate();
             
-            while (rs.next()) {
-                userType = rs.getString("usertype");
-                fullName = rs.getString("fullname");
-                image = rs.getString("image");
-                password = rs.getString("password");
-                
-                user = new User();
-                user.setUsername(username);
-                user.setFullName(fullName);
-                user.setUserType(userType);
-                user.setPassword(password);
-                user.setImage(image);
-            }
-        }
-        catch (SQLException ex) {            
-        }
-        
-        if (user != null) {
+            User user = new User();
+            user.setUsername(username);
+            user.setFullName(fullName);
+            user.setPassword(password);
+            user.setEmail(email);
+            
+            //request.setAttribute("newuser", user);
+            //sendPage(request, response, "/regsuccess.jsp");
+            
+            //Get the session object
+            //sendRedirect doesn't recognise request object
+            //only session
+            HttpSession session = request.getSession();
             session.setAttribute("memberprofile", user);
-            response.sendRedirect(request.getContextPath() + "/MainPageAdmin.jsp");
+            response.sendRedirect(request.getContextPath() + "/MainPageUser.jsp");
         }
-        else {
-            response.sendRedirect(request.getContextPath() + "/NonExists.html");
-        }            
+        catch (SQLException ex) {   
+            PrintWriter out = response.getWriter();
+            out.println(ex);
+        }
     }
+    
+    void sendPage(HttpServletRequest req, HttpServletResponse res, String fileName) throws ServletException, IOException
+    {
+        // Get the dispatcher; it gets the main page to the user
+	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(fileName);
+
+	if (dispatcher == null)
+	{
+            System.out.println("There was no dispatcher");
+	    // No dispatcher means the html file could not be found.
+	    res.sendError(res.SC_NO_CONTENT);
+	}
+	else
+	    dispatcher.forward(req, res);
+    }        
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
-     * Handles the HTTP <code>GET</code> method.
+     * Handles the HTTP
+     * <code>GET</code> method.
      *
      * @param request servlet request
      * @param response servlet response
@@ -120,7 +142,8 @@ private JDBCUtility jdbcUtility;
     }
 
     /**
-     * Handles the HTTP <code>POST</code> method.
+     * Handles the HTTP
+     * <code>POST</code> method.
      *
      * @param request servlet request
      * @param response servlet response
@@ -142,5 +165,4 @@ private JDBCUtility jdbcUtility;
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

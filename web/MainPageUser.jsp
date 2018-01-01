@@ -30,12 +30,12 @@
 					<h1><a class="icon fa-home" href="MainPageUser.jsp"> Home</a></h1>
 					<nav id="nav">
 						<ul>
-							<li>Welcome @${sessionScope.memberprofile.getUsername()}</li>
+							<li>Welcome @${sessionScope.memberprofile.getFullName()}</li>
 							<li>
 								<a href="#" class="icon fa-angle-down">Buy Ticket</a>
 								<ul>
 									<li><a href="UserViewOrder.html">View Order</a></li>
-									<li><a href="UserProfile.html">My Profile</a></li>
+									<li><a href="UserProfile.jsp">My Profile</a></li>
 
 								</ul>
 							</li>

@@ -69,7 +69,7 @@ public class UserLogin extends HttpServlet {
         
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String userType = "", fullName = "", image = "";
+        String userType = "", fullName = "", image = "", email ="";
         
         String sqlQuery = "SELECT * FROM user WHERE username = ? AND password = ? AND usertype = 'client'";
         
@@ -83,11 +83,15 @@ public class UserLogin extends HttpServlet {
                 userType = rs.getString("usertype");
                 fullName = rs.getString("fullname");
                 image = rs.getString("image");
+                password = rs.getString("password");
+                email = rs.getString("email");
                 
                 user = new User();
                 user.setUsername(username);
                 user.setFullName(fullName);
                 user.setUserType(userType);
+                user.setPassword(password);
+                user.setEmail(email);
                 user.setImage(image);
             }
         }

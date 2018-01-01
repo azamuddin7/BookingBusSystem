@@ -23,15 +23,15 @@
 					<h1><a href="MainPageUser.jsp">Bus Booking System</a> by Boys</h1>
 					<nav id="nav">
 						<ul>
-							<li><a class="icon fa-home" href="MainPageUser.jsp">Home</a></li>
-							<li><a href="MainPageUser.jsp" class="button">Sign In</a></li>
+							<li><a class="icon fa-home" href="index.html">Home</a></li>
+							<li><a href="index.html" class="button">Sign In</a></li>
 						</ul>
 					</nav>
 				</header>
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2>Registration try</h2>
+					<h2>Registration</h2>
 					<hr>
 						<form method="post" action="RegisterServlet">
 							<div>

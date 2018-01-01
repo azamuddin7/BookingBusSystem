@@ -39,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
     {
         String driver = "com.mysql.jdbc.Driver";
 
-        String dbName = "cash";
+        String dbName = "bus";
         String url = "jdbc:mysql://localhost/" + dbName + "?";
         String userName = "root";
         String password = "";
@@ -95,9 +95,11 @@ public class RegisterServlet extends HttpServlet {
             //only session
             HttpSession session = request.getSession();
             session.setAttribute("newuser", user);
-            response.sendRedirect(request.getContextPath() + "index.html");
+            response.sendRedirect(request.getContextPath() + "/index.html");
         }
-        catch (SQLException ex) {            
+        catch (SQLException ex) {   
+            PrintWriter out = response.getWriter();
+            out.println(ex);
         }
     }
     
