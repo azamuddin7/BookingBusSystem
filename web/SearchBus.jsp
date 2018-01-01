@@ -54,12 +54,12 @@
 							<li>
 								<a href="#" class="icon fa-angle-down">Search Bus</a>
 								<ul>
-									<li><a href="UserViewOrder.html">View Booking</a></li>
+									<li><a href="UserViewOrder.jsp">View Booking</a></li>
 									<li><a href="UserProfile.html">My Profile</a></li>
 									
 								</ul>
 							</li>
-							<li><a href="HomePage.html" class="button">Log Out</a></li>
+							<li><a href="logout.jsp" class="button">Log Out</a></li>
 						</ul>
 					</nav>
 				</header>

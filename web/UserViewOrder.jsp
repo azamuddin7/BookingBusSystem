@@ -27,11 +27,11 @@
 							<li>
 								<a href="#" class="icon fa-angle-down">View Order</a>
 								<ul>
-									<li><a href="MainPageUser.html">Buy Ticket</a></li>
+									<li><a href="MainPageUser.jsp">Buy Ticket</a></li>
 									<li><a href="UserProfile.html">My Profile</a></li>
 								</ul>
 							</li>
-							<li><a href="HomePage.html" class="button">Log Out</a></li>
+							<li><a href="logout.jsp" class="button">Log Out</a></li>
 						</ul>
 					</nav>
 				</header>
