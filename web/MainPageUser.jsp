@@ -50,7 +50,7 @@
 					<h2 style="padding-top:10px; text-align: center;font-size: 3em;margin-bottom: 10px;text-transform: uppercase;font-weight: bold; color: #333;">Book Your Ticket !</h2>
 					<hr>
 
-						<form method="post" action="#" style=" width: 100%;">
+						<form method="post" action="SearchBus" style=" width: 100%;">
 							<div>
 									<h3 style=" padding-top:20px; font-family: 'Open Sans Condensed', sans-serif; font-size: 24px; color: #333;">DEPARTURE FROM</h3>
 										<div>
@@ -86,7 +86,7 @@
 								</div>
 								<div>
 								<br>
-									<a href="UserSearchBus.html" class="button special icon fa-search">SEARCH BUSES</a>
+									<input type="submit" class="button special icon fa-search" value="SEARCH BUSSES"/>
 								</div>
 							</div>
 						</form>

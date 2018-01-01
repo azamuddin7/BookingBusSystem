@@ -50,6 +50,7 @@ public class JDBCUtility
             System.out.println("Version      " + dma.getDriverVersion());
             System.out.println("");
 	}
+        
 	catch (SQLException ex)
 	{
             while (ex != null)
