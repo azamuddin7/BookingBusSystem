@@ -1,7 +1,14 @@
+<%-- 
+    Document   : UserRegister
+    Created on : Jan 1, 2018, 6:14:59 PM
+    Author     : Ahmad Azamuddin
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 	<head>
-		<title>Bus Ticket Online</title>
+		<title>Bus Ticket Online- Register</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="alpha/js/ie/html5shiv.js"></script><![endif]-->
@@ -13,44 +20,42 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="index.html">Bus Booking System</a> by Boys</h1>
+					<h1><a href="MainPageUser.jsp">Bus Booking System</a> by Boys</h1>
 					<nav id="nav">
 						<ul>
-							<li><a class="icon fa-home" href="index.html">Home</a></li>
-							<li>
-								<a href="#" class="icon fa-angle-down">User</a>
-								<ul>
-									<li><a href="index.html">User</a></li>
-									<li><a href="AdminLogIn.jsp">Admin</a></li>
-								</ul>
-							</li>
-							<li><a href="UserRegister.jsp" class="button">Sign Up</a></li>
+							<li><a class="icon fa-home" href="MainPageUser.jsp">Home</a></li>
+							<li><a href="MainPageUser.jsp" class="button">Sign In</a></li>
 						</ul>
 					</nav>
 				</header>
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2>Welcome to bus ticket booking system !</h2>
+					<h2>Registration try</h2>
 					<hr>
-						<h3>User Sign In</h3>
-						<form method="post" action="UserLogin">
+						<form method="post" action="RegisterServlet">
 							<div>
 								<div>
-									<input type="text" name="username" id="username" value="" placeholder="Enter Username: " />
-								</div>
-								<br>
-								<div>
-									<input type="password" name="password" id="password" value="" placeholder="Enter Password: " />
+									<h3>*Full Name: </h3><input type="text" name="fullname" id="fullname" value="" placeholder="Enter Your FullName" />
 								</div>
 								<div>
+									<h3>*Username: </h3><input type="text" name="username" id="username" value="" placeholder="Enter Username: " />
+								</div>
+								<div>
+									<h3>*Password: </h3><input type="password" name="password" id="password" value="" placeholder="Enter Password: " />
+								</div>
+								<div>
+									<h3>*Confirmation Password: </h3><input type="password" name="password" id="password" value="" placeholder="Enter Password: " />
+								</div>
+								<div>
 								<br>
-								<input type="submit" class="button" value="Sign In"/>
+								<input type="submit" class="button" value="Register"/>
 								</div>
 							</div>
 						</form>
 					<hr>
 				</section>
+			
 			<!-- Footer -->
 				<footer id="footer">
 					<ul class="icons">
@@ -62,9 +67,10 @@
 						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design by: <a href="HomePage.html">Boys</a></li>
+						<li>&copy; Untitled. All rights reserved.</li><li>Design by: <a href="MainPageUser.jsp">Boys</a></li>
 					</ul>
 				</footer>
+	
 		<!-- Scripts -->
 			<script src="alpha/js/jquery.min.js"></script>
 			<script src="alpha/js/jquery.dropotron.min.js"></script>
