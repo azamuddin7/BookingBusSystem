@@ -203,7 +203,7 @@
 							
 						</table>
 						<br>
-						<a href="UserViewOrder.html" class="button alt icon fa-check" style ="background-color: white;color: black; border: 2px solid #4CAF50; ">PROCEED</a>
+						<a href="UserViewOrder.jsp" class="button alt icon fa-check" style ="background-color: white;color: black; border: 2px solid #4CAF50; ">PROCEED</a>
 					<hr>
 				</section>
 				
