@@ -36,7 +36,7 @@
 								<a href="#" class="icon fa-angle-down">Manage Booking</a>
 								<ul>
 									<li><a href="AdminViewOrder.html">View Booking</a></li>
-									<li><a href="AdminManage.html">Manage Bus</a></li>
+									<li><a href="AdminManageBus.jsp">Manage Bus</a></li>
 									<li><a href="AdminProfile.jsp">My Profile</a></li>
 								</ul>
 							</li>
