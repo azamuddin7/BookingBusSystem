@@ -11,21 +11,21 @@ import java.io.Serializable;
  * @author Sufi
  */
 public class SetBus implements Serializable{
-    private String oper, dtime, pickup, dropoff, status;
+    private String operator, dtime, pickup, dropoff, status;
     private double price;
     private int id;
     /**
      * @return the oper
      */
-    public String getOper() {
-        return oper;
+    public String getOperator() {
+        return operator;
     }
 
     /**
      * @param oper the oper to set
      */
-    public void setOper(String oper) {
-        this.oper = oper;
+    public void setOperator(String oper) {
+        this.operator = operator;
     }
 
     /**
