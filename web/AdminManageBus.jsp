@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="bean.User" %>
+<%@ page import="bean.SetBus" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,7 +33,7 @@
 								<a href="#" class="icon fa-angle-down">Manage Bus</a>
 								<ul>
                                                                         <li><a href="AdminViewOrder.html">View Booking</a></li>
-									<li><a href="MainPageAdmin.jsp">Manage Booking</a></li>
+									<li><a href="/ManageDataServlet">Manage Booking</a></li>
 									<li><a href="AdminProfile.jsp">My Profile</a></li>
 								</ul>
 							</li>
@@ -58,34 +63,49 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${sessionScope.currencylist}" var="currentcurr" varStatus="loop">
+                        <c:forEach items="${sessionScope.buslist}" var="currentbus" varStatus="loop">
                         <tr>
                             <td><c:out value="${loop.index + 1}" /></td>
                             
-                            <c:url value="/admin/EditCurrencyServlet" var="displayURLEdit">
-                                <c:param name="id"   value="${currentcurr.id}" />
+                            <c:url value="/EditBusServlet" var="displayURLEdit">
+                                <c:param name="id"   value="${currentbus.id}" />
                             </c:url>
-                            <td><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentcurr.name}" /></a></td>
-                            <td><c:out value="${currentcurr.symbol}" /></td>
+                            
+                            <td><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.operator}" /></a></td>   <!-- operator-->
+                            
+                            
+                           <td><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.dtime}" /></a></td>     <!--dtime-->
+                           
+                            
+                            <td><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.pickup}" /></a></td>     <!-- pickup-->
+                           
+                            
+                            <td><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.dropoff}" /></a></td>     <!-- dropoff-->
+                            
+                            
+                            <td><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.price}" /></a></td>     <!-- price-->
+                            
+                            
+                            
                             
                             <c:if test="${currentcurr.status == 'active'}">
-                                <c:url value="/admin/DeactivateCurrencyServlet" var="displayURLDeactivate">
-                                    <c:param name="id"   value="${currentcurr.id}" />
+                                <c:url value="/DeactiveBusServlet" var="displayURLDeactivate">
+                                    <c:param name="id"   value="${currentbus.id}" />
                                 </c:url>
-                                <td><a href="<c:out value='${displayURLDeactivate}' />"><c:out value="${currentcurr.status}" /></a></td>
+                                <td><a href="<c:out value='${displayURLDeactivate}' />"><c:out value="${currentbus.status}" /></a></td>
                             </c:if>
                                 
-                            <c:if test="${currentcurr.status == 'deactivate'}">
-                                <c:url value="/admin/ActivateCurrencyServlet" var="displayURLActivate">
-                                    <c:param name="id"   value="${currentcurr.id}" />
+                            <c:if test="${currentcurr.status == 'deactive'}">
+                                <c:url value="/ActiveBusServlet" var="displayURLActivate">
+                                    <c:param name="id"   value="${currentbus.id}" />
                                 </c:url>
-                                <td><a href="<c:out value='${displayURLActivate}' />"><c:out value="${currentcurr.status}" /></a></td>
+                                <td><a href="<c:out value='${displayURLActivate}' />"><c:out value="${currentbus.status}" /></a></td>
                             </c:if>
                             
-                            <c:url value="/admin/DeleteCurrencyServlet" var="displayURLDelete">
-                                <c:param name="id"   value="${currentcurr.id}" />
+                            <c:url value="/DeleteBusServlet" var="displayURLDelete">
+                                <c:param name="id"   value="${currentbus.id}" />
                             </c:url>
-                            <td><a href="<c:out value='${displayURLDelete}' />"></a></td>
+                            <td><a href="<c:out value='${displayURLDelete}' />">Delete</a></td>
                         </tr>
                         </c:forEach>
                     </tbody> 
@@ -93,30 +113,30 @@
             </div> <!-- table-responsive -->              
             <hr>
             <h2>Add New Bus</h2>
-                                <form action="/AddBusServlet" method="post">
-                                <fieldset>
-                                    
-                                    <p>Operator</p>
-                                    <input  id="operator" name="operator" placeholder="Operator Name" type="text" required>
+                <form action="/BookingBusSystem/AddBusServlet" method="post">
+                <fieldset>
 
-                                    <p>Departure Time</p>
-                                    <input id="dtime" name="dtime" placeholder="Departure Time" type="text" required>
-                                    
-                                    <p>Pickup Point</p>
-                                    <input id="pickup" name="pickup" placeholder="Pickup Point" type="text" required>
-                                    
-                                    <p>Drop Off</p>
-                                    <input id="dropoff" name="dropoff" placeholder="Drop Off" type="text" required>
-                                    
-                                    <p>Price</p>
-                                    <input id="price"name="price" placeholder="Price" type="number" required>
-                                    
-                                    <br>
-                                    <button class="button">Cancel</button>
-                                    <button type="submit" class="button">Submit</button>
-                                    
-                                </fieldset>
-                              </form>
+                    <p>Operator</p>
+                    <input  id="operator" name="operator" placeholder="Operator Name" type="text" required>
+
+                    <p>Departure Time</p>
+                    <input id="dtime" name="dtime" placeholder="Departure Time" type="text" required>
+
+                    <p>Pickup Point</p>
+                    <input id="pickup" name="pickup" placeholder="Pickup Point" type="text" required>
+
+                    <p>Drop Off</p>
+                    <input id="dropoff" name="dropoff" placeholder="Drop Off" type="text" required>
+
+                    <p>Price</p>
+                    <input id="price"name="price" placeholder="Price" type="number" required>
+
+                    <br>
+                    <button class="button">Cancel</button>
+                    <button type="submit" class="button">Submit</button>
+
+                </fieldset>
+              </form>
 
     </section>
 			
