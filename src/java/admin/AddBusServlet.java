@@ -84,7 +84,7 @@ public class AddBusServlet extends HttpServlet {
             preparedStatement.setDouble(5, price);
             preparedStatement.executeUpdate();
             
-            String sqlQuery = "SELECT * FROM setbus ORDER BY name ASC";
+            String sqlQuery = "SELECT * FROM setbus ORDER BY operator ASC";
             
             preparedStatement = con.prepareStatement(sqlQuery);
             ResultSet rs = preparedStatement.executeQuery();
@@ -111,11 +111,12 @@ public class AddBusServlet extends HttpServlet {
                 busList.add(bus);
             }
         }
-        catch (SQLException ex) {            
+        catch (SQLException ex) {  
+            
         }
         
         session.setAttribute("buslist", busList);
-        response.sendRedirect(request.getContextPath() + "AdminManageBus.jsp");
+        response.sendRedirect(request.getContextPath() + "/AdminManageBus.jsp");
     }
     
 
