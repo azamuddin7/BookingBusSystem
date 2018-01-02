@@ -2060,6 +2060,7 @@ background-color:#fff;		}
 	}
 
 	input[type="text"],
+        input[type="number"],
 	input[type="password"],
 	input[type="email"],
 	select,
@@ -2082,6 +2083,7 @@ background-color:#fff;		}
 	}
 
 		input[type="text"]:invalid,
+                input[type="number"]:invalid,
 		input[type="password"]:invalid,
 		input[type="email"]:invalid,
 		select:invalid,
@@ -2090,6 +2092,7 @@ background-color:#fff;		}
 		}
 
 		input[type="text"]:focus,
+                input[type="number"]:focus,
 		input[type="password"]:focus,
 		input[type="email"]:focus,
 		select:focus,
@@ -2132,6 +2135,7 @@ background-color:#fff;		}
 		}
 
 	input[type="text"],
+        input[type="number"],
 	input[type="password"],
 	input[type="email"],
 	select {
