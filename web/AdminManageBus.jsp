@@ -25,11 +25,11 @@
 						<ul>
 							<li>Welcome @${sessionScope.memberprofile.getFullName()}</li>
 							<li>
-								<a href="#" class="icon fa-angle-down">My Profile</a>
+								<a href="#" class="icon fa-angle-down">Manage Bus</a>
 								<ul>
                                                                         <li><a href="AdminViewOrder.html">View Booking</a></li>
-									<li><a href="AdminViewOrder.html">View Booking</a></li>
-									<li><a href="MainPageAdmin.html">Manage Booking</a></li>
+									<li><a href="MainPageAdmin.jsp">Manage Booking</a></li>
+									<li><a href="AdminProfile.jsp">My Profile</a></li>
 								</ul>
 							</li>
 							<li><a href="logout.jsp" class="button">Log Out</a></li>
@@ -39,7 +39,11 @@
 
 			<!-- Banner -->
     <section id="banner">
+       
             <h2>Bus Management</h2>
+            <a href="AdminAddBus.jsp" class="button">+</a>
+                 
+    
             <hr>
                 <div class="table-responsive">
                 <table >
