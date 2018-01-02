@@ -40,7 +40,7 @@
 			<!-- Banner -->
                         <section id="banner">
                                 <h2>Add New Bus</h2>
-                                <form action="RegisterBusServlet" method="post">
+                                <form action="AddBusServlet" method="post">
                                 <fieldset>
                                     
                                     <p>Operator</p>

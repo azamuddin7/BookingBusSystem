@@ -41,9 +41,7 @@
     <section id="banner">
        
             <h2>Bus Management</h2>
-            <a href="AdminAddBus.jsp" class="button">+</a>
-                 
-    
+
             <hr>
                 <div class="table-responsive">
                 <table >
@@ -94,6 +92,31 @@
                 </table>    
             </div> <!-- table-responsive -->              
             <hr>
+            <h2>Add New Bus</h2>
+                                <form action="/AddBusServlet" method="post">
+                                <fieldset>
+                                    
+                                    <p>Operator</p>
+                                    <input  id="operator" name="operator" placeholder="Operator Name" type="text" required>
+
+                                    <p>Departure Time</p>
+                                    <input id="dtime" name="dtime" placeholder="Departure Time" type="text" required>
+                                    
+                                    <p>Pickup Point</p>
+                                    <input id="pickup" name="pickup" placeholder="Pickup Point" type="text" required>
+                                    
+                                    <p>Drop Off</p>
+                                    <input id="dropoff" name="dropoff" placeholder="Drop Off" type="text" required>
+                                    
+                                    <p>Price</p>
+                                    <input id="price"name="price" placeholder="Price" type="number" required>
+                                    
+                                    <br>
+                                    <button class="button">Cancel</button>
+                                    <button type="submit" class="button">Submit</button>
+                                    
+                                </fieldset>
+                              </form>
 
     </section>
 			
