@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Ahmad%20Azamuddin/Desktop/IPproject/BookingBusSystem/web/index.html</file>
             <file>file:/C:/Users/Ahmad%20Azamuddin/Desktop/IPproject/BookingBusSystem/src/java/admin/AdminLogin.java</file>
             <file>file:/C:/Users/Ahmad%20Azamuddin/Desktop/IPproject/BookingBusSystem/src/java/user/UpdateProfileServlet.java</file>
@@ -12,6 +13,16 @@
             <file>file:/C:/Users/Ahmad%20Azamuddin/Desktop/IPproject/BookingBusSystem/src/java/admin/AdminUpdateProfileServlet.java</file>
             <file>file:/C:/Users/Ahmad%20Azamuddin/Desktop/IPproject/BookingBusSystem/web/UserProfile.jsp</file>
             <file>file:/C:/Users/Ahmad%20Azamuddin/Desktop/IPproject/BookingBusSystem/src/java/bean/User.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/C:/Users/Ahmad%20Azamuddin/Desktop/IPproject/BookingBusSystem/web/index.html</file>
+            <file>file:/C:/Users/Ahmad%20Azamuddin/Desktop/IPproject/BookingBusSystem/src/java/user/UpdateProfileServlet.java</file>
+            <file>file:/C:/Users/Ahmad%20Azamuddin/Desktop/IPproject/BookingBusSystem/web/UserProfile.jsp</file>
+            <file>file:/C:/Users/Ahmad%20Azamuddin/Desktop/IPproject/BookingBusSystem/src/java/bean/User.java</file>
+=======
+            <file>file:/C:/Users/irsya/Documents/GitHub/BookingBusSystem/src/java/user/UserLogin.java</file>
+>>>>>>> d11aeb15865a81e13a6006bdfd4c72d5af991ae1
+>>>>>>> 3e668f6e3deac1e4294ecac767b83710213d4a86
         </group>
     </open-files>
 </project-private>
