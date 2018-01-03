@@ -20,7 +20,7 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a class="icon fa-home" href="index.html"> Home</a></h1>
+					<h1><a class="icon fa-home" href="MainPageUser.jsp"> Home</a></h1>
 					<nav id="nav">
 						<ul>
 							<li>Welcome @${sessionScope.memberprofile.getFullName()}</li>
