@@ -4,9 +4,25 @@
         <servlet-name>SearchBus</servlet-name>
         <servlet-class>user.SearchBus</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserPayment</servlet-name>
+        <servlet-class>user.UserPayment</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserThankYou</servlet-name>
+        <servlet-class>user.UserThankYou</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SearchBus</servlet-name>
         <url-pattern>/SearchBus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserPayment</servlet-name>
+        <url-pattern>/UserPayment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserThankYou</servlet-name>
+        <url-pattern>/UserThankYou</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
