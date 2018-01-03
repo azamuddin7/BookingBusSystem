@@ -1,13 +1,13 @@
 <%-- 
-    Document   : UserViewOrder
-    Created on : Jan 1, 2018, 5:29:17 PM
+    Document   : UserPayment
+    Created on : Jan 4, 2018, 12:47:14 AM
     Author     : irsya
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
 		<title>Bus Ticket Online</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -49,51 +49,37 @@
 									<li><a href="UserProfile.jsp">My Profile</a></li>
 								</ul>
 							</li>
-							<li><a href="logout.jsp" class="button">Log Out</a></li>
+							<li><a href="logout.html" class="button">Log Out</a></li>
 						</ul>
 					</nav>
 				</header>
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2>VIEW ORDER</h2>
+					<h2>PAYMENT</h2>
 					<hr>
-					<a href="#" class="button button-light special" style="float:left; padding-left:20px; margin-left:70px;">BACK TO TICKETING</a>
-					<button type="button" class="button button-light special" style="float:left; padding-left:20px; margin-left:800px; padding-right:20px;" data-toggle="modal" data-target=".demo-popup">PROCEED TO PAYMENT</button>
 					<br>
-					<br>
-					<br>
-					<table class="icad" style="width:90%; text-align:center; margin-left:70px; margin-right:20px;">
-					  <tr class="icadtr"> 
-						<th class="icadth" style="width:25%">BUS</th>
-						<th class="icadth" style="width:18%">DEPARTURE</th> 
-						<th class="icadth" style="width:18%">DESTINATION</th>
-						<th class="icadth" style="width:15%">QUANTITY</th>
-						<th class="icadth" style="width:14%">PRICE(RM)</th>
-					  </tr>
-					  <tr class="icadtr"> 
-						<td class="icadth">COURSEWAYLINK</td>
-						<td class="icadth">LARKIN SENTRAL</td> 
-						<td class="icadth">TERMINAL BERSEPADU SELATAN</td>
-						<td class="icadth">1</td>
-						<td class="icadth">35.00</td>
-					  </tr>
-					  <tr class="icadtr"> 
-						<td class="icadth"></td>
-						<td class="icadth"></td> 
-						<td class="icadth"></td>
-						<td class="icadth"></td>
-						<td class="icadth"></td>
-					  </tr>
-					  <tr class="icadtr"> 
-						<td class="icadth"></td>
-						<td class="icadth"></td>
-						<td class="icadth"></td>
-						<td class="icadth"></td> 
-						<td class="icadth"></td>
-					  </tr>
-					</table>
-
+					<div style="background-color:white;width: 500px;height: 500px;margin-left: 450px;">
+						<img src="images/card.png" style="width: 250px;margin-top: 25px;">
+						<div style="border-radius: 5px;background-color: #f2f2f2;padding: 20px;margin-left: 100px;margin-right: 100px;height: 390px;">
+						<form method="post" action="UserThankYou" style="width: 500px;height: 450px; text-align:left;">
+							<div>
+								<h2 style=" margin-bottom: 3px; padding-top:20px; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; color: #777;">Card Number</h2>
+								<input name="cardNo" style="color:black; width:250px; height:31px; padding-bottom:0px; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;">
+								<h3 style=" margin-bottom: 3px; padding-top:5px; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; color: #777;">Name On Card</h3>
+								<input name="cardName" style="color:black; width:250px; height:31px; padding-bottom:0px; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;">
+								<h3 style=" margin-bottom: 3px; padding-top:5px; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; color: #777;">Expiry Date</h3>
+								<input name="cardExpiry" placeholder="dd/mm" style="color:black; width:250px; height:31px; padding-bottom:0px; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;">
+								<h3 style=" margin-bottom: 3px; padding-top:5px; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; color: #777;">CCV / CVV</h3>
+								<input name="cardCVV" style="color:black; width:250px; height:31px; padding-bottom:0px; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;">
+							<br><br>
+							
+								<input type="submit" class="btn btn-primary" style="background-color:#777;margin-left: 35px;border-bottom-width: 20px;" value="PAY"/>
+                                                
+							</div>
+							
+						</form></div>
+					</div>
 					<hr style="padding-top:30px;">
 				</section>
 			
@@ -112,24 +98,7 @@
 					</ul>
 				</footer>
 				
-				<div class="modal fade demo-popup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel-1" aria-hidden="true">
-				<div class="modal-dialog" style="width:400px; margin-right:400px; margin-top:200px; margin-left:500px; ">
-				<div class="modal-content" style=" width: 402px; height: 152px;">
-				<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> <h3 class="modal-title">Payment</h3>
-				</div>
-				<div class="modal-body">
-					<form action="UserPayment" style="margin-right:0px; margin-left:0px; width:370px; height:50px;">
-							<input type="submit" class="btn btn-primary" style="margin-left:65px;" value="Debit">
-							<input type="submit" class="btn btn-primary" style="margin-left:30px;" value="Online Banking">
-					</form>
-
-					
-				</div>
-				</div><!-- /.modal-content -->
-				</div><!-- /.modal-dialog -->
-				</div><!-- /.modal-->
-				<!-- popup box modal ends -->		
+	
 				
 		<!-- Scripts -->
 			<script src="alpha/js/jquery.min.js"></script>
