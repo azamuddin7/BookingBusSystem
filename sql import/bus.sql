@@ -21,7 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `bus`
 --
-
+CREATE DATABASE IF NOT EXISTS `bus` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `bus`;
 -- --------------------------------------------------------
 
 --
@@ -44,7 +45,7 @@ CREATE TABLE `requestbus` (
 
 CREATE TABLE `setbus` (
   `id` int(11) NOT NULL,
-  `oper` varchar(30) NOT NULL,
+  `operator` varchar(30) NOT NULL,
   `dtime` varchar(10) NOT NULL,
   `pickup` varchar(30) NOT NULL,
   `dropoff` varchar(30) NOT NULL,
