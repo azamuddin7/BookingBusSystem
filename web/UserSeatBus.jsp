@@ -1,7 +1,7 @@
 <%-- 
     Document   : UserSeatBus
     Created on : Jan 1, 2018, 5:07:38 PM
-    Author     : irsya
+    Author     : Akmal
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -68,7 +68,8 @@
 				<section id="banner">
 					<h2>Select Your Seat</h2>
 					<hr>
-						<table id="seattable">
+                                        <form action ="/BookingBusSystem/UserSeatBus0" method ="post">
+                                            <table id="seattable">
 						 <tr>
 							<td rowspan="4" style ="background-color: white;color: black; border: solid #000000;" >FRONT</td>
 							<td class="seat">
@@ -204,6 +205,7 @@
 						</table>
 						<br>
 						<a href="UserViewOrder.jsp" class="button alt icon fa-check" style ="background-color: white;color: black; border: 2px solid #4CAF50; ">PROCEED</a>
+                                        </form>
 					<hr>
 				</section>
 				
