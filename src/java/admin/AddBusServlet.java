@@ -84,7 +84,7 @@ public class AddBusServlet extends HttpServlet {
             preparedStatement.setDouble(5, price);
             preparedStatement.executeUpdate();
             
-            String sqlQuery = "SELECT * FROM setbus ORDER BY operator ASC";
+            String sqlQuery = "SELECT * FROM setbus ORDER BY id ASC";
             
             preparedStatement = con.prepareStatement(sqlQuery);
             ResultSet rs = preparedStatement.executeQuery();

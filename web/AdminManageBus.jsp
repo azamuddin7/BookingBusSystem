@@ -68,7 +68,7 @@
                             <td><c:out value="${loop.index + 1}" /></td>
                             
                             <c:url value="/EditBusServlet" var="displayURLEdit">
-                                <c:param name="id"   value="${currentbus.id}" />
+                                <c:param name="id"   value="${currentbus.id}" ></c:param>
                             </c:url>
                             
                             <td><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.operator}" /></a></td>   <!-- operator-->
@@ -88,18 +88,18 @@
                             
                             
                             
-                            <c:if test="${currentcurr.status == 'active'}">
-                                <c:url value="/DeactiveBusServlet" var="displayURLDeactivate">
+                            <c:if test="${currentbus.status == 'active'}">
+                                <c:url value="/DeactiveBusServlet" var="displayURLDeactive">
                                     <c:param name="id"   value="${currentbus.id}" />
                                 </c:url>
-                                <td><a href="<c:out value='${displayURLDeactivate}' />"><c:out value="${currentbus.status}" /></a></td>
+                                <td><a href="<c:out value='${displayURLDeactive}' />"><c:out value="${currentbus.status}" /></a></td>
                             </c:if>
                                 
-                            <c:if test="${currentcurr.status == 'deactive'}">
-                                <c:url value="/ActiveBusServlet" var="displayURLActivate">
+                            <c:if test="${currentbus.status == 'deactive'}">
+                                <c:url value="/ActiveBusServlet" var="displayURLActive">
                                     <c:param name="id"   value="${currentbus.id}" />
                                 </c:url>
-                                <td><a href="<c:out value='${displayURLActivate}' />"><c:out value="${currentbus.status}" /></a></td>
+                                <td><a href="<c:out value='${displayURLActive}' />"><c:out value="${currentbus.status}" /></a></td>
                             </c:if>
                             
                             <c:url value="/DeleteBusServlet" var="displayURLDelete">

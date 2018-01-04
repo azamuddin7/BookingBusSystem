@@ -97,6 +97,7 @@ public class DeactiveBusServlet extends HttpServlet {
                 
                 bus.setStatus(busStatus);
                 bus.setId(setBusId);
+                busList.add(bus);
             }
         }
         catch (SQLException ex) {            
