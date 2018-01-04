@@ -65,13 +65,13 @@
 						<form method="post" action="UserThankYou" style="width: 500px;height: 450px; text-align:left;">
 							<div>
 								<h2 style=" margin-bottom: 3px; padding-top:20px; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; color: #777;">Card Number</h2>
-								<input name="cardNo" style="color:black; width:250px; height:31px; padding-bottom:0px; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;">
+								<input id="cardNo" name="cardNo"  style="color:black; width:250px; height:31px; padding-bottom:0px; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;">
 								<h3 style=" margin-bottom: 3px; padding-top:5px; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; color: #777;">Name On Card</h3>
-								<input name="cardName" style="color:black; width:250px; height:31px; padding-bottom:0px; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;">
+								<input id="cardName" name="cardName" style="color:black; width:250px; height:31px; padding-bottom:0px; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;">
 								<h3 style=" margin-bottom: 3px; padding-top:5px; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; color: #777;">Expiry Date</h3>
-								<input name="cardExpiry" placeholder="dd/mm" style="color:black; width:250px; height:31px; padding-bottom:0px; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;">
+								<input id="cardExpiry" name="cardExpiry" placeholder="dd/mm" style="color:black; width:250px; height:31px; padding-bottom:0px; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;">
 								<h3 style=" margin-bottom: 3px; padding-top:5px; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; color: #777;">CCV / CVV</h3>
-								<input name="cardCVV" style="color:black; width:250px; height:31px; padding-bottom:0px; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;">
+								<input id="cardCVV" name="cardCVV" style="color:black; width:250px; height:31px; padding-bottom:0px; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;">
 							<br><br>
 							
 								<input type="submit" class="btn btn-primary" style="background-color:#777;margin-left: 35px;border-bottom-width: 20px;" value="PAY"/>
