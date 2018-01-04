@@ -25,9 +25,8 @@ import jdbc.JDBCUtility;
  *
  * @author Sufi
  */
-@WebServlet(name = "ManageDataServlet", urlPatterns = {"/ManageDataServlet"})
-public class ManageDataServlet extends HttpServlet {
-
+@WebServlet(name = "EditBusProcessServlet", urlPatterns = {"/EditBusProcessServlet"})
+public class EditBusProcessServlet extends HttpServlet {
     private JDBCUtility jdbcUtility;
     private Connection con;
     
@@ -48,6 +47,7 @@ public class ManageDataServlet extends HttpServlet {
         jdbcUtility.jdbcConnect();
         con = jdbcUtility.jdbcGetConnection();
     }
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -61,11 +61,31 @@ public class ManageDataServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         
-        ArrayList busList = new ArrayList();        
+        ArrayList busList = new ArrayList();  
         
-        String sqlQuery = "SELECT * FROM setbus ORDER BY id ASC";        
+        //get form data from VIEW > V-I
+        String operator = request.getParameter("operator");
+        String dtime = request.getParameter("dtime");
+        String pickup = request.getParameter("pickup");
+        String dropoff = request.getParameter("dropoff");
+        Double price = Double.parseDouble(request.getParameter("price"));
+        String id = request.getParameter("id");
+        
+        String sqlUpdate = "UPDATE setbus SET operator= ?, dtime = ?, pickup = ?, dropoff = ?, price = ? WHERE id = ?"; 
+        
         try {
-            PreparedStatement preparedStatement = con.prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = con.prepareStatement(sqlUpdate);
+            preparedStatement.setString(1, operator);
+            preparedStatement.setString(2, dtime);
+            preparedStatement.setString(3, pickup);
+            preparedStatement.setString(4, dropoff);
+            preparedStatement.setDouble(5, price);
+            preparedStatement.setString(6, id);
+            preparedStatement.executeUpdate();
+            
+            String sqlQuery = "SELECT * FROM setbus ORDER BY id ASC";
+            
+            preparedStatement = con.prepareStatement(sqlQuery);
             ResultSet rs = preparedStatement.executeQuery();
             
             while (rs.next()) {
@@ -76,7 +96,7 @@ public class ManageDataServlet extends HttpServlet {
                 double busPrice = rs.getDouble("price");
                 
                 String busStatus = rs.getString("status");
-                int id = rs.getInt("id");
+                int setBusId = rs.getInt("id");
                 
                 SetBus bus = new SetBus();
                 bus.setOperator(busOperator);
@@ -86,7 +106,7 @@ public class ManageDataServlet extends HttpServlet {
                 bus.setPrice(busPrice);
                 
                 bus.setStatus(busStatus);
-                bus.setId(id);
+                bus.setId(setBusId);
                 busList.add(bus);
             }
         }
@@ -94,8 +114,7 @@ public class ManageDataServlet extends HttpServlet {
         }
         
         session.setAttribute("buslist", busList);
-        response.sendRedirect(request.getContextPath() + "/AdminManageBus.jsp");
-        
+        response.sendRedirect(request.getContextPath() + "/ManageDataServlet"); 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

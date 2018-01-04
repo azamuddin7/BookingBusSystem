@@ -96,7 +96,7 @@ public class EditBusServlet extends HttpServlet {
         }
         
         session.setAttribute("busedit", bus);
-        response.sendRedirect(request.getContextPath() + "/EditBus.jsp"); 
+        response.sendRedirect(request.getContextPath() + "/AdminEditBus.jsp"); 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
