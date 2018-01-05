@@ -62,7 +62,7 @@
 					<div style="background-color:white;width: 500px;height: 500px;margin-left: 450px;">
 						<img src="images/card.png" style="width: 250px;margin-top: 25px;">
 						<div style="border-radius: 5px;background-color: #f2f2f2;padding: 20px;margin-left: 100px;margin-right: 100px;height: 390px;">
-						<form method="post" action="UserThankYou" style="width: 500px;height: 450px; text-align:left;">
+						<form method="post" action="UserPayment" style="width: 500px;height: 450px; text-align:left;">
 							<div>
 								<h2 style=" margin-bottom: 3px; padding-top:20px; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; color: #777;">Card Number</h2>
 								<input id="cardNo" name="cardNo"  style="color:black; width:250px; height:31px; padding-bottom:0px; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px;">
