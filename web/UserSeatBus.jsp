@@ -9,23 +9,23 @@
 <html>
 <head>
 		<style>
-			#viewbus {
+			#seattable {
 				font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 				border-collapse: collapse;
 				width: 100%;
 			}
 
-			#viewbus td, #viewbus th {
+			#seattable td, #viewbus th {
 				border: 1px solid #ddd;
 				padding: 8px;
 				color: black;
 			}
 
-			#viewbus tr:nth-child(even){background-color: #f2f2f2;}
+			#seattable tr:nth-child(even){background-color: #f2f2f2;}
 
-			#viewbus tr:hover {background-color: #ddd;}
+			#seattable tr:hover {background-color: #ddd;}
 
-			#viewbus th {
+			#seattable th {
 				padding-top: 12px;
 				padding-bottom: 12px;
 				text-align: left;
@@ -68,144 +68,153 @@
 				<section id="banner">
 					<h2>Select Your Seat</h2>
 					<hr>
-                                        <form action ="/BookingBusSystem/UserSeatBus0" method ="post">
+                                       
                                             <table id="seattable">
+                                                 <form action ="/BookingBusSystem/UserSeatBusServlet" method ="post">
+                                                     <table>
 						 <tr>
 							<td rowspan="4" style ="background-color: white;color: black; border: solid #000000;" >FRONT</td>
-							<td class="seat">
-							<input type="checkbox" id="1C" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="1C" id="1C" />
 							  <label for="1C">1C</label>
-							  </td>
-							<td class="seat">
-							  <input type="checkbox" id="2C" />
+							</td>
+                                                        <td class="seats">
+							 <input type="checkbox" name= "seat" value ="2C" id="2C" />
 							  <label for="2C">2C</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="3C" />
+							<td class="seats">
+							 <input type="checkbox" name= "seat" value ="3C" id="3C" />
 							  <label for="3C">3C</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="4C" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="4C" id="4C" />
 							  <label for="4C">4C</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="5C" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="5C" id="5C" />
 							  <label for="5C">5C</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="6C" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="6C" id="6C" />
 							  <label for="6C">6C</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="7C" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="7C" id="7C" />
 							  <label for="7C">7C</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="8C" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="8C" id="8C" />
 							  <label for="8C">8C</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="9C" />
+							<td class="seats">
+							 <input type="checkbox" name= "seat" value ="9C" id="9C" />
 							  <label for="9C">9C</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="10C" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="10C" id="10C" />
 							  <label for="10C">10C</label>
 							</td>
 							<td rowspan="4" style ="background-color: white;color: black; border: solid #000000;" >BACK</td>
 						  </tr>
 						  <tr>
-							<td class="seat">
-							 <input type="checkbox" id="1B" />
+							<td class="seats">
+							 <input type="checkbox" name= "seat" value ="1B" id="1B" />
 							  <label for="1B">1B</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="2B" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="2B" id="2B" />
 							  <label for="2B">2B</label>
 							</td>
 							<td class="seat">
-							  <input type="checkbox" id="3B" />
+							  <input type="checkbox" name= "seat" value ="3B" id="3B" />
 							  <label for="3B">3B</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="4B" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="4B" id="4B" />
 							  <label for="4B">4B</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="5B" />
+							<td class="seats">
+							 <input type="checkbox" name= "seat" value ="5B" id="5B" />
 							  <label for="5B">5B</label>
 							</td>
-							 <td class="seat">
-							  <input type="checkbox" id="6B" />
+							 <td class="seats">
+							  <input type="checkbox" name= "seat" value ="6B" id="6B" />
 							  <label for="6B">6B</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="7B" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="7B" id="7B" />
 							  <label for="7B">7B</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="8B" />
+							<td class="seats">
+							 <input type="checkbox" name= "seat" value ="8B" id="8B" />
 							  <label for="8B">8B</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="9B" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="9B" id="9B" />
 							  <label for="9B">9B</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="10B" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="10B" id="10B" />
 							  <label for="10B">10B</label>
 							</td>
 						  </tr>
 						  <tr>
 						  </tr>
 						  <tr>
-							<td class="seat">
-							<input type="checkbox" id="1A" />
+							<td class="seats">
+							<input type="checkbox" name= "seat" value ="1A" id="1A" />
 							  <label for="1A">1A</label>
 							</td>
-							 <td class="seat">
-							  <input type="checkbox" id="2A" />
+							 <td class="seats">
+							  <input type="checkbox" name= "seat" value ="2A" id="2A" />
 							  <label for="2A">2A</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="3A" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="3A" id="3A" />
 							  <label for="3A">3A</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="4A" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="4A" id="4A" />
 							  <label for="4A">4A</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="5A" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="5A" id="5A" />
 							  <label for="5A">5A</label>
 							</td\>
-							<td class="seat">
-							  <input type="checkbox" id="6A" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="6A" id="6A" />
 							  <label for="6A">6A</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="7A" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="7A" id="7A" />
 							  <label for="7A">7A</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="8A" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="8A" id="8A" />
 							  <label for="8A">8A</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="9A" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="9A" id="9A" />
 							  <label for="9A">9A</label>
 							</td>
-							<td class="seat">
-							  <input type="checkbox" id="10A" />
+							<td class="seats">
+							  <input type="checkbox" name= "seat" value ="10A" id="10A" />
 							  <label for="10A">10A</label>
 							</td>	
 						  </tr>
 						  <tr>
-							
+                                                     
+						
+                                                 </tr>
+
+                                            </table>
+                                                     <br>
+                                                <button type="submit" class="button">Submit</button> 
+                                                </form>
 						</table>
 						<br>
-						<a href="UserViewOrder.jsp" class="button alt icon fa-check" style ="background-color: white;color: black; border: 2px solid #4CAF50; ">PROCEED</a>
-                                        </form>
+                                                       
+                                       
 					<hr>
 				</section>
 				

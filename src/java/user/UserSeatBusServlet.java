@@ -53,20 +53,16 @@ public class UserSeatBusServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String checkboxes[] = request.getParameterValues("seat");
         
         
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UserSeatBusServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UserSeatBusServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            for(int i = 0; i < checkboxes.length; i++){
+                out.println(checkboxes[i]);
+            }
+            
         }
     }
 
