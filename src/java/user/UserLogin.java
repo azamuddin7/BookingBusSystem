@@ -95,7 +95,9 @@ public class UserLogin extends HttpServlet {
                 user.setImage(image);
             }
         }
-        catch (SQLException ex) {            
+        catch (SQLException ex) {        
+            PrintWriter out= response.getWriter();
+            out.println(ex);
         }
         
         if (user != null) {
