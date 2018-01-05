@@ -15,7 +15,21 @@ public class RequestBus implements Serializable{
     private String username;
     private String seat;
     private String status; 
-    private String setbusId;
+    private String id;
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
+    
     /**
      * @return the username
      */
@@ -56,20 +70,6 @@ public class RequestBus implements Serializable{
      */
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    /**
-     * @return the setbusId
-     */
-    public String getSetbusId() {
-        return setbusId;
-    }
-
-    /**
-     * @param setbusId the setbusId to set
-     */
-    public void setSetbusId(String setbusId) {
-        this.setbusId = setbusId;
     }
 
     /**
