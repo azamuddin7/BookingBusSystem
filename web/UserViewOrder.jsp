@@ -119,7 +119,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> <h3 class="modal-title">Payment</h3>
 				</div>
 				<div class="modal-body">
-					<form action="UserPayment" style="margin-right:0px; margin-left:0px; width:370px; height:50px;">
+					<form action="UserPayment.jsp" style="margin-right:0px; margin-left:0px; width:370px; height:50px;">
 							<input type="submit" class="btn btn-primary" style="margin-left:65px;" value="Debit">
 							<input type="submit" class="btn btn-primary" style="margin-left:30px;" value="Online Banking">
 					</form>

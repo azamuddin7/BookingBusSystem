@@ -87,7 +87,7 @@ public class UserPayment extends HttpServlet {
                 
         HttpSession session = request.getSession();
         session.setAttribute("paymentdetails", pd);
-        response.sendRedirect(request.getContextPath() + "/UserPayment.jsp");
+        response.sendRedirect(request.getContextPath() + "/UserThankYou");
                 
         }
         catch (SQLException ex) {  
