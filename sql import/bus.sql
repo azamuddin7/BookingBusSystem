@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2018 at 06:09 PM
+-- Generation Time: Jan 05, 2018 at 06:38 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -21,8 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `bus`
 --
-CREATE DATABASE IF NOT EXISTS `bus` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `bus`;
+
 -- --------------------------------------------------------
 
 --
@@ -30,11 +29,11 @@ USE `bus`;
 --
 
 CREATE TABLE `requestbus` (
-  `requestid` int(11) NOT NULL,
+  `bookid` int(11) NOT NULL,
   `username` varchar(10) NOT NULL DEFAULT '',
   `seat` varchar(10) NOT NULL DEFAULT '',
   `status` varchar(15) NOT NULL DEFAULT '',
-  `setbus_id` int(11) NOT NULL
+  `id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -52,6 +51,13 @@ CREATE TABLE `setbus` (
   `price` decimal(18,2) NOT NULL,
   `status` varchar(10) NOT NULL DEFAULT 'active'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `setbus`
+--
+
+INSERT INTO `setbus` (`id`, `operator`, `dtime`, `pickup`, `dropoff`, `price`, `status`) VALUES
+(27, 'Citylink', '8:30', 'KL', 'Larkin', '35.00', 'active');
 
 -- --------------------------------------------------------
 
@@ -86,7 +92,9 @@ INSERT INTO `user` (`username`, `password`, `usertype`, `fullname`, `email`, `im
 -- Indexes for table `requestbus`
 --
 ALTER TABLE `requestbus`
-  ADD PRIMARY KEY (`requestid`);
+  ADD PRIMARY KEY (`bookid`),
+  ADD KEY `id` (`id`),
+  ADD KEY `username` (`username`);
 
 --
 -- Indexes for table `setbus`
@@ -108,12 +116,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `requestbus`
 --
 ALTER TABLE `requestbus`
-  MODIFY `requestid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `bookid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `setbus`
 --
 ALTER TABLE `setbus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

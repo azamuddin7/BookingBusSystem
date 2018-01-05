@@ -24,7 +24,7 @@ public class SetBus implements Serializable{
     /**
      * @param oper the oper to set
      */
-    public void setOperator(String oper) {
+    public void setOperator(String operator) {
         this.operator = operator;
     }
 
