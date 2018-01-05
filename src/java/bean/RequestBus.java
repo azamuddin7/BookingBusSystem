@@ -11,25 +11,11 @@ import java.io.Serializable;
  * @author Sufi
  */
 public class RequestBus implements Serializable{
-    private String requestId;
+    private String bookid;
     private String username;
     private String seat;
     private String status; 
     private String setbusId;
-    /**
-     * @return the requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    /**
-     * @param requestId the requestId to set
-     */
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
     /**
      * @return the username
      */
@@ -84,6 +70,20 @@ public class RequestBus implements Serializable{
      */
     public void setSetbusId(String setbusId) {
         this.setbusId = setbusId;
+    }
+
+    /**
+     * @return the bookid
+     */
+    public String getBookid() {
+        return bookid;
+    }
+
+    /**
+     * @param bookid the bookid to set
+     */
+    public void setBookid(String bookid) {
+        this.bookid = bookid;
     }
    
 }
