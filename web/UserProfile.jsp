@@ -28,7 +28,7 @@
 								<a href="#" class="icon fa-angle-down">My Profile</a>
 								<ul>
 									<li><a href="MainPageUser.jsp">Buy Ticket</a></li>
-									<li><a href="UserViewOrder.html">View Order</a></li>
+									<li><a href="UserViewOrder.jsp">View Order</a></li>
 								</ul>
 							</li>
 							<li><a href="logout.jsp" class="button">Log Out</a></li>

@@ -55,7 +55,7 @@
 								<a href="#" class="icon fa-angle-down">Seat</a>
 								<ul>
 									<li><a href="UserViewOrder.jsp">View Order</a></li>
-									<li><a href="UserProfile.html">My Profile</a></li>
+									<li><a href="UserProfile.jsp">My Profile</a></li>
 									
 								</ul>
 							</li>

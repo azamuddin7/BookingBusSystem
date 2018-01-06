@@ -21,23 +21,23 @@
         <div id="page-wrapper">
             
             <!-- Header -->
-				<header id="header" class="alt">
-					<h1><a class="icon fa-home" href="MainPageAdmin.jsp"> Home</a></h1>
-					<nav id="nav">
-						<ul>
-							<li>Welcome @${sessionScope.memberprofile.getFullName()}</li>
-							<li>
-								<a href="#" class="icon fa-angle-down">Manage Bus</a>
-								<ul>
-                                                                        <li><a href="AdminViewOrder.jsp">View Booking</a></li>
-									<li><a href="/ManageDataServlet">Manage Booking</a></li>
-									<li><a href="AdminProfile.jsp">My Profile</a></li>
-								</ul>
-							</li>
-							<li><a href="logout.jsp" class="button">Log Out</a></li>
-						</ul>
-					</nav>
-				</header>
+            <header id="header" class="alt">
+                    <h1><a class="icon fa-home" href="MainPageAdmin.jsp"> Home</a></h1>
+                    <nav id="nav">
+                            <ul>
+                                <li>Welcome @${sessionScope.memberprofile.getFullName()}</li>
+                                <li>
+                                    <a href="#" class="icon fa-angle-down">View Booking</a>
+                                    <ul>
+                                            <li><a href="AdminAddBus.jsp">Manage Bus</a></li>
+                                            <li><a href="MainPageAdmin.jsp">Manage Booking</a></li>
+                                            <li><a href="AdminProfile.jsp">My Profile</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="logout.jsp" class="button">Log Out</a></li>
+                            </ul>
+                    </nav>
+            </header>
                                 
                                 
             <!-- Banner -->
@@ -60,7 +60,16 @@
                             <li>&copy; Untitled. All rights reserved.</li><li>Design by: <a href="MainPageAdmin.jsp">Boys</a></li>
                     </ul>
             </footer>
-        
+            
+            
+            <!-- Scripts -->
+            <script src="alpha/js/jquery.min.js"></script>
+            <script src="alpha/js/jquery.dropotron.min.js"></script>
+            <script src="alpha/js/jquery.scrollgress.min.js"></script>
+            <script src="alpha/js/skel.min.js"></script>
+            <script src="alpha/js/util.js"></script>
+            <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+            <script src="alpha/js/main.js"></script>
         
     </body>
 </html>
