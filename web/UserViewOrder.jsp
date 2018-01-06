@@ -55,46 +55,106 @@
 				</header>
 
 			<!-- Banner -->
-				<section id="banner">
+				<section id="banner" style="padding-bottom: 70px;">
 					<h2>VIEW ORDER</h2>
-					<hr>
-					<a href="#" class="button button-light special" style="float:left; padding-left:20px; margin-left:70px;">BACK TO TICKETING</a>
-					<button type="button" class="button button-light special" style="float:left; padding-left:20px; margin-left:800px; padding-right:20px;" data-toggle="modal" data-target=".demo-popup">PROCEED TO PAYMENT</button>
-					<br>
-					<br>
-					<br>
-					<table class="icad" style="width:90%; text-align:center; margin-left:70px; margin-right:20px;">
-					  <tr class="icadtr"> 
-						<th class="icadth" style="width:25%">BUS</th>
-						<th class="icadth" style="width:18%">DEPARTURE</th> 
-						<th class="icadth" style="width:18%">DESTINATION</th>
-						<th class="icadth" style="width:15%">QUANTITY</th>
-						<th class="icadth" style="width:14%">PRICE(RM)</th>
-					  </tr>
-					  <tr class="icadtr"> 
-						<td class="icadth">COURSEWAYLINK</td>
-						<td class="icadth">LARKIN SENTRAL</td> 
-						<td class="icadth">TERMINAL BERSEPADU SELATAN</td>
-						<td class="icadth">1</td>
-						<td class="icadth">35.00</td>
-					  </tr>
-					  <tr class="icadtr"> 
-						<td class="icadth"></td>
-						<td class="icadth"></td> 
-						<td class="icadth"></td>
-						<td class="icadth"></td>
-						<td class="icadth"></td>
-					  </tr>
-					  <tr class="icadtr"> 
-						<td class="icadth"></td>
-						<td class="icadth"></td>
-						<td class="icadth"></td>
-						<td class="icadth"></td> 
-						<td class="icadth"></td>
-					  </tr>
-					</table>
-
-					<hr style="padding-top:30px;">
+                                        <hr>
+                                        <br>
+					<div class="container">
+                                        <div class="row">
+                                            <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3" style="padding-left: 35px; margin-left: 110px; width: 852px;"> 
+                                                <div class="row">
+                                                    <div class="col-xs-6 col-sm-6 col-md-6" style="text-align:left;height: 120px;">
+                                                        <address>
+                                                            <h3 style="margin-bottom: 0px;"><strong>Biling Details</strong></h3>
+                                                            <strong>Name: </strong>
+                                                            <br>
+                                                            <strong>Email: </strong>
+                                                            <br>
+                                                            <strong>Date: 10th January 2018</strong>
+                                                            <br>
+                                                        </address>
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-6 col-md-6 text-right" style="height:72px;padding-right: 20px;;">
+                                                        <address>
+                                                            <h3><strong>#1</strong></h3>
+                                                            <br>
+                                                        </address>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="text-center" style="padding-left: 372px;padding-right: 372px; padding-bottom: 10px;">
+                                                        <h1>RECEIPT</h1>
+                                                    </div>
+                                                    </span>
+                                                    <table class="table table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Operator</th>
+                                                                <th class="text-center">Seat</th>
+                                                                <th class="text-center">Departure</th>
+                                                                <th class="text-center">Pickup</th>
+                                                                <th class="text-center">Drop Off</th>
+                                                                <th class="text-center">Price</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="col-md-2"><em></em></td>
+                                                                <td class="col-md-1 text-center"></td>
+                                                                <td class="col-md-2 text-center"></td>
+                                                                <td class="col-md-2 text-center"></td>
+                                                                <td class="col-md-2 text-center"></td>
+                                                                <td class="col-md-1 text-center"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="col-md-2"><em></em></td>
+                                                                <td class="col-md-1 text-center"></td>
+                                                                <td class="col-md-2 text-center"></td>
+                                                                <td class="col-md-2 text-center"></td>
+                                                                <td class="col-md-2 text-center"></td>
+                                                                <td class="col-md-1 text-center"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="col-md-2"><em></em></td>
+                                                                <td class="col-md-1 text-center"></td>
+                                                                <td class="col-md-2 text-center"></td>
+                                                                <td class="col-md-2 text-center"></td>
+                                                                <td class="col-md-2 text-center"></td>
+                                                                <td class="col-md-1 text-center"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td class="text-right">
+                                                                
+                                                                    <strong>Subtotal: RM </strong>
+                                                                
+                                                                </td>
+                                                                <td class="text-center">
+                                                                <p>
+                                                                    <strong></strong>
+                                                                </p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td class="text-right"><h4><strong>Total: RM </strong></h4></td>
+                                                                <td class="text-center text-danger"><strong></strong></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                	
+                                            </div>
+                                            <a href="#" class="button button-light special" style="float:left;padding-left:20px;margin-left: 300px;padding-right: 20px;">BACK TO TICKETING</a>
+					<button type="button" class="button button-light special" style="float:left;padding-left:20px;margin-left: 50px;padding-right:20px;" data-toggle="modal" data-target=".demo-popup">PROCEED TO PAYMENT</button>
+                                        </div>
+                                    </div>        
 				</section>
 			
 			<!-- Footer -->
