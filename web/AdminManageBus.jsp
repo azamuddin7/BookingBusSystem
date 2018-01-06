@@ -9,7 +9,6 @@
 <%@ page import="bean.User" %>
 <%@ page import="bean.SetBus" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,7 +31,7 @@
 							<li>
 								<a href="#" class="icon fa-angle-down">Manage Bus</a>
 								<ul>
-                                                                        <li><a href="AdminViewOrder.html">View Booking</a></li>
+                                                                        <li><a href="AdminViewOrder.jsp">View Booking</a></li>
 									<li><a href="/ManageDataServlet">Manage Booking</a></li>
 									<li><a href="AdminProfile.jsp">My Profile</a></li>
 								</ul>
