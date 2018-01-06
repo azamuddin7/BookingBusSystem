@@ -86,7 +86,7 @@
                                                         <h1>RECEIPT</h1>
                                                     </div>
                                                     </span>
-                                                    <table class="table table-hover">
+                                                    <table class="table table-hover" action="UserViewOrder">
                                                         <thead>
                                                             <tr>
                                                                 <th>Operator</th>
