@@ -5,14 +5,21 @@
  */
 package user;
 
+import bean.RequestBus;
+import bean.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import jdbc.JDBCUtility;
 
 /**
@@ -25,23 +32,23 @@ public class UserSeatBusServlet extends HttpServlet {
     private JDBCUtility jdbcUtility;
     private Connection con;
 
-       public void init() throws ServletException
-       {
-           String driver = "com.mysql.jdbc.Driver";
+    public void init() throws ServletException {
+        String driver = "com.mysql.jdbc.Driver";
 
-           String dbName = "bus";
-           String url = "jdbc:mysql://localhost/" + dbName + "?";
-           String userName = "root";
-           String password = "";
+        String dbName = "bus";
+        String url = "jdbc:mysql://localhost/" + dbName + "?";
+        String userName = "root";
+        String password = "";
 
-           jdbcUtility = new JDBCUtility(driver,
-                                         url,
-                                         userName,
-                                         password);
+        jdbcUtility = new JDBCUtility(driver,
+                url,
+                userName,
+                password);
 
-           jdbcUtility.jdbcConnect();
-           con = jdbcUtility.jdbcGetConnection();
-       }
+        jdbcUtility.jdbcConnect();
+        con = jdbcUtility.jdbcGetConnection();
+    }
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -53,17 +60,41 @@ public class UserSeatBusServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String checkboxes[] = request.getParameterValues("seat");
-        
-        
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("memberprofile");
+        String username = user.getUsername();
+        String status = "Pending";
+        String busId = request.getParameter("id");
+        RequestBus book = new RequestBus();
+        String seats[] = request.getParameterValues("seat");
+
+        book.setUsername(username);
+        book.setId(busId);
+        book.setStatus(status);
+        book.setSeat(seats);
+        // ArrayList seatList = new ArrayList();        
+        PrintWriter out = response.getWriter();
+        out.println(book.getSeat());
+        String sqlQuery = "insert into requestbus (seat, username, status, id) values (?, ?, ?, ?)";
+
+        try {
             /* TODO output your page here. You may use following sample code. */
-            for(int i = 0; i < checkboxes.length; i++){
-                out.println(checkboxes[i]);
-            }
-            
+            PreparedStatement preparedStatement = con.prepareStatement(sqlQuery);
+            preparedStatement.setString(1, book.getSeat());
+            preparedStatement.setString(2, book.getUsername());
+            preparedStatement.setString(3, book.getStatus());
+            preparedStatement.setString(4, book.getId());
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException ex) {
+
+            out.println(ex);
         }
+
+        session.setAttribute("book", book);
+        response.sendRedirect(request.getContextPath() + "/UserViewOrder.jsp");// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -104,5 +135,4 @@ public class UserSeatBusServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

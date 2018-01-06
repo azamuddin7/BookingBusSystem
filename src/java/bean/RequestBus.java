@@ -6,16 +6,19 @@
 package bean;
 
 import java.io.Serializable;
+
 /**
  *
  * @author Sufi
  */
-public class RequestBus implements Serializable{
+public class RequestBus implements Serializable {
+
     private String bookid;
     private String username;
-    private String seat;
-    private String status; 
+    private String[] seats;
+    private String status;
     private String id;
+
     /**
      * @return the id
      */
@@ -29,7 +32,7 @@ public class RequestBus implements Serializable{
     public void setId(String id) {
         this.id = id;
     }
-    
+
     /**
      * @return the username
      */
@@ -48,14 +51,27 @@ public class RequestBus implements Serializable{
      * @return the seat
      */
     public String getSeat() {
-        return seat;
+        String s = "";
+        int i = 0;
+        for (String seat : seats) {
+            if (seats.length <= 0) {
+                return "";
+            } else if (seats.length == 1) {
+                return seats[0];
+            } else if (i == 0) {
+                s += seat;
+            }
+            s = s + "," + seat;
+            i++;
+        }
+        return s;
     }
 
     /**
-     * @param seat the seat to set
+     * @param seats
      */
-    public void setSeat(String seat) {
-        this.seat = seat;
+    public void setSeat(String[] seats) {
+        this.seats = seats;
     }
 
     /**
@@ -85,5 +101,5 @@ public class RequestBus implements Serializable{
     public void setBookid(String bookid) {
         this.bookid = bookid;
     }
-   
+
 }

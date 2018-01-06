@@ -83,7 +83,7 @@
 							<td>Larkin</td>
 							<td>Terminal Bersepadu Selatan</td>
 							<td>RM35.00</td>
-							<td><a href="UserSeatBus.jsp" style ="background-color: white;color: black; border: 2px solid #000000; ">Select</a></td>
+							<td><a href="UserSeatBus.jsp?busId=27" style ="background-color: white;color: black; border: 2px solid #000000; ">Select</a></td>
 						  </tr>
 						  <tr>
 							<td>Transnational</td>
