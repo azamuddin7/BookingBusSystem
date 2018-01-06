@@ -27,8 +27,7 @@
 							<li>
 								<a href="#" class="icon fa-angle-down">My Profile</a>
 								<ul>
-                                                                        <li><a href="AdminViewOrder.html">View Booking</a></li>
-									<li><a href="AdminViewOrder.html">View Booking</a></li>
+                                                                        <li><a href="AdminViewOrderServlet">View Booking</a></li>
 									<li><a href="MainPageAdmin.html">Manage Booking</a></li>
 								</ul>
 							</li>

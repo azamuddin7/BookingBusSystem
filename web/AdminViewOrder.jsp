@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="bean.RequestBus" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -43,7 +45,30 @@
             <!-- Banner -->
             <section id="banner">
                     <h2>View Booking</h2>
-                    sabaq sat...
+                    
+                    <hr>
+                    
+                    <table>
+                        <tr>
+                            <th style="text-align:center">Booking ID</th>
+                            <th style="text-align:center">User</th>
+                            <th style="text-align:center">Bus ID</th>       
+                        </tr>
+                        
+                        <!--booking items-->
+                        <c:forEach items="${sessionScope.booking}" var="book" varStatus="loop">                    
+                            
+                            <tr>
+                                <td style="color:black"><c:out value="${book.bookid}"/></td>
+                                <td style="color:black"><c:out value="${book.username}"/></td>
+                                <td style="color:black"><c:out value="${book.id}"/></td>
+                            </tr>
+                        
+                        </c:forEach>
+                        
+                    </table>
+                    
+                    
             </section> 
 
             <!-- Footer -->
