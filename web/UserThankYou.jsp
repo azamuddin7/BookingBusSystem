@@ -59,7 +59,7 @@ Created on : Jan 4, 2018, 12:50:34 AM
 				<hr>
 					<div class="jumbotron text-xs-center">
 						<h1 class="display-3"><strong>Thank You!</strong></h1>
-						<p class="lead"><strong>Please check your email for the receipt and make sure you print before going to the bus central.</strong></p>
+						<p class="lead"><strong>Please print the invoice and claim your rightful ticket at the bus counter.</strong></p>
 						<hr>
 						<p>
 						<strong>Having trouble?</strong> <a href="">Contact us</a>
