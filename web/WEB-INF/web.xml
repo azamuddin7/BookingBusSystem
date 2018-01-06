@@ -12,6 +12,14 @@
         <servlet-name>UserThankYou</servlet-name>
         <servlet-class>user.UserThankYou</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserViewOrder</servlet-name>
+        <servlet-class>user.UserViewOrder</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserInvoice</servlet-name>
+        <servlet-class>user.UserInvoice</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SearchBus</servlet-name>
         <url-pattern>/SearchBus</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>UserThankYou</servlet-name>
         <url-pattern>/UserThankYou</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserViewOrder</servlet-name>
+        <url-pattern>/UserViewOrder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserInvoice</servlet-name>
+        <url-pattern>/UserInvoice</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
