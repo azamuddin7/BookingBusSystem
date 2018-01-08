@@ -4,7 +4,13 @@
     Author     : irsya
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="bean.User" %>
+<%@ page import="bean.SetBus" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -68,6 +74,7 @@
             <section id="banner">
                 <h2>View Bus</h2>
                 <hr>
+                
                 <table id="viewbus">
                     <tr>
                         <th>Operator</th>
@@ -77,30 +84,24 @@
                         <th>Price</th>
                         <th>
                     </tr>
+                        </select>
+                     
+                        <c:forEach items="${sessionScope.searchbus}" var="currentbus" varStatus="loop">
                     <tr>
-                        <td>KKKL</td>
-                        <td>07.15 AM</td>
-                        <td>Larkin</td>
-                        <td>Terminal Bersepadu Selatan</td>
-                        <td>RM35.00</td>
-                        <td><a href="UserSeatBus.jsp?busId=27" style ="background-color: white;color: black; border: 2px solid #000000; ">Select</a></td>
+                        <td><c:if test="${searchbus.pickup == 'KL'}"/></td>
+                        <td><c:out value="${currentbus.operator}" /></td>
+                        <td><c:out value="${currentbus.dtime}" /></td>
+                        <td><c:out value="${currentbus.pickup}" /></td>
+                        <td><c:out value="${currentbus.dropoff}" /></td>
+                        <td><c:out value="${currentbus.id}" />${currentbus.id}</td>
+                        <c:url value="/UserSeatBusServlet" var="displayURLSelect">
+                            <c:param name="id"   value="${currentbus.id}" />
+                            </c:url>
+                        <td><a href="<c:out value='${displayURLSelect}' />">Select</a></td>
                     </tr>
-                    <tr>
-                        <td>Transnational</td>
-                        <td>08.35 AM</td>
-                        <td>Larkin</td>
-                        <td>Terminal Bersepadu Selatan</td>
-                        <td>RM35.00</td>
-                        <td><a href="UserSeatBus.jsp" style ="background-color: white;color: black; border: 2px solid #000000; ">Select</a></td>
-                    </tr>
-                    <tr>
-                        <td>Eagle Express</td>
-                        <td>07.45 PM</td>
-                        <td>Larkin</td>
-                        <td>Terminal Bersepadu Selatan</td>
-                        <td>RM35.00</td>
-                        <td><a href="UserSeatBus.jsp" style ="background-color: white;color: black; border: 2px solid #000000; ">Select</a></td>
-                    </tr>
+                    </c:forEach>
+                        <td><a href="UserSeatBus.jsp" class="button">Select</a></td>
+                   
 
                 </table>
                 <hr>

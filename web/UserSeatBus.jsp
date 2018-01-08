@@ -73,7 +73,7 @@
                     <form action ="/BookingBusSystem/UserSeatBusServlet" method ="get">
                         <table>
                             <tr>
-                                <td rowspan="4" style ="background-color: white;color: black; border: solid #000000;" >FRONT</td>
+                                <td rowspan="5" style ="background-color: white;color: black; border: solid #000000;" >FRONT</td>
                                 <td class="seats">
                                     <input type="checkbox" name= "seat" value ="1C" id="1C" />
                                     <label for="1C">1C</label>
@@ -114,7 +114,7 @@
                                     <input type="checkbox" name= "seat" value ="10C" id="10C" />
                                     <label for="10C">10C</label>
                                 </td>
-                                <td rowspan="4" style ="background-color: white;color: black; border: solid #000000;" >BACK</td>
+                                <td rowspan="5" style ="background-color: white;color: black; border: solid #000000;" >BACK</td>
                             </tr>
                             <tr>
                                 <td class="seats">
@@ -158,6 +158,7 @@
                                     <label for="10B">10B</label>
                                 </td>
                             </tr>
+                            <td  colspan="10" ></td>
                             <tr>
                             </tr>
                             <tr>

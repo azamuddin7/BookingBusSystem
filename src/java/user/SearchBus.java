@@ -7,6 +7,7 @@ package user;
 
 import java.io.IOException;
 import bean.SetBus;
+import bean.User;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -58,7 +59,8 @@ public class SearchBus extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-
+        User user = (User)session.getAttribute("memberprofile");
+        String login = user.getUsername();
         ArrayList busList = new ArrayList();
 
         String sqlQuery = "SELECT * FROM setbus ORDER BY pickup ASC";
