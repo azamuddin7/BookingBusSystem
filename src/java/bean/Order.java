@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author Harris D.Ilham Adni
  */
 public class Order implements Serializable {
-    private String username, pickup, dropoff, bookid, id, operator;
+    private String username, pickup, dropoff, bookid, id, operator, seat;
     private double price;
     
     
@@ -123,6 +123,20 @@ public class Order implements Serializable {
      */
     public void setOperator(String operator) {
         this.operator = operator;
+    }
+
+    /**
+     * @return the seat
+     */
+    public String getSeat() {
+        return seat;
+    }
+
+    /**
+     * @param seat the seat to set
+     */
+    public void setSeat(String seat) {
+        this.seat = seat;
     }
     
     

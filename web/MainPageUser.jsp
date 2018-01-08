@@ -39,7 +39,7 @@
                         <li>
                             <a href="#" class="icon fa-angle-down">Buy Ticket</a>
                             <ul>
-                                <li><a href="UserViewOrder.jsp">View Order</a></li>
+                                <li><a href="UserViewOrder">View Order</a></li>
                                 <li><a href="UserProfile.jsp">My Profile</a></li>
 
                             </ul>

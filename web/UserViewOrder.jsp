@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="bean.RequestBus" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,9 +69,9 @@
                                                     <div class="col-xs-6 col-sm-6 col-md-6" style="text-align:left;height: 120px;">
                                                         <address>
                                                             <h3 style="margin-bottom: 0px;"><strong>Biling Details</strong></h3>
-                                                            <strong>Name: </strong>
+                                                            <strong>Name: ${sessionScope.memberprofile.getFullName()} </strong>
                                                             <br>
-                                                            <strong>Email: </strong>
+                                                            <strong>Email: ${sessionScope.memberprofile.getEmail()} </strong>
                                                             <br>
                                                             <strong>Date: 10th January 2018</strong>
                                                             <br>
@@ -86,10 +89,10 @@
                                                         <h1>RECEIPT</h1>
                                                     </div>
                                                     </span>
-                                                    <table class="table table-hover" action="UserViewOrder">
+                                                    <table class="table table-hover">
                                                         <thead>
                                                             <tr>
-                                                                <th>Operator</th>
+                                                                <th class="text-center">Operator</th>
                                                                 <th class="text-center">Seat</th>
                                                                 <th class="text-center">Departure</th>
                                                                 <th class="text-center">Pickup</th>
@@ -98,30 +101,21 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            
+                                                        <c:forEach items="${sessionScope.bookingU}" var="bookU" varStatus="loop">
+                                                            
                                                             <tr>
-                                                                <td class="col-md-2"><em></em></td>
-                                                                <td class="col-md-1 text-center"></td>
-                                                                <td class="col-md-2 text-center"></td>
-                                                                <td class="col-md-2 text-center"></td>
-                                                                <td class="col-md-2 text-center"></td>
-                                                                <td class="col-md-1 text-center"></td>
+                                                                <td style="color:black"><c:out value="${bookU.operator}"/></td>
+                                                                <td style="color:black"><c:out value="${bookU.seat}"/></td>
+                                                                <td style="color:black"><c:out value="time"/></td>
+                                                                <td style="color:black"><c:out value="${bookU.pickup}"/></td>
+                                                                <td style="color:black"><c:out value="${bookU.dropoff}"/></td>
+                                                                <td style="color:black"><c:out value="${bookU.price}"/></td>
                                                             </tr>
-                                                            <tr>
-                                                                <td class="col-md-2"><em></em></td>
-                                                                <td class="col-md-1 text-center"></td>
-                                                                <td class="col-md-2 text-center"></td>
-                                                                <td class="col-md-2 text-center"></td>
-                                                                <td class="col-md-2 text-center"></td>
-                                                                <td class="col-md-1 text-center"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="col-md-2"><em></em></td>
-                                                                <td class="col-md-1 text-center"></td>
-                                                                <td class="col-md-2 text-center"></td>
-                                                                <td class="col-md-2 text-center"></td>
-                                                                <td class="col-md-2 text-center"></td>
-                                                                <td class="col-md-1 text-center"></td>
-                                                            </tr>
+                                                            
+                                                        </c:forEach>
+                                                            
+                                                            <!--
                                                             <tr>
                                                                 <td></td>
                                                                 <td></td>
@@ -138,12 +132,13 @@
                                                                 </p>
                                                                 </td>
                                                             </tr>
+                                                            -->
                                                             <tr>
                                                                 <td></td>
                                                                 <td></td>
                                                                 <td></td>
                                                                 <td></td>
-                                                                <td class="text-right"><h4><strong>Total: RM </strong></h4></td>
+                                                                <td class="text-right"><h4><strong>Total: RM <c:out value="${sessionScope.total}"/></strong></h4></td>
                                                                 <td class="text-center text-danger"><strong></strong></td>
                                                             </tr>
                                                         </tbody>
