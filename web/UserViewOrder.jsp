@@ -41,7 +41,7 @@
 					<h1><a class="icon fa-home" href="MainPageUser.jsp"> Home</a></h1>
 					<nav id="nav">
 						<ul>
-							<li>Welcome @user</li>
+                                                    <li>Welcome @${sessionScope.memberprofile.getFullName()}</li>
 							<li>
 								<a href="#" class="icon fa-angle-down">View Order</a>
 								<ul>

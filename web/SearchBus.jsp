@@ -47,10 +47,10 @@
 
             <!-- Header -->
             <header id="header" class="alt">
-                <h1><a class="icon fa-home" href="MainPageUser.html"> Home</a></h1>
+                <h1><a class="icon fa-home" href="MainPageUser.jsp"> Home</a></h1>
                 <nav id="nav">
                     <ul>
-                        <li>Welcome @user</li>
+                        <li>Welcome @${sessionScope.memberprofile.getFullName()}</li>
                         <li>
                             <a href="#" class="icon fa-angle-down">Search Bus</a>
                             <ul>

@@ -6,14 +6,31 @@
 package bean;
 
 import java.io.Serializable;
+
 /**
  *
  * @author Sufi
  */
-public class SetBus implements Serializable{
-    private String operator, dtime, pickup, dropoff, status;
+public class SetBus implements Serializable {
+
+    private String operator, dtime, pickup, dropoff, status, date;
     private double price;
     private int id;
+
+    /**
+     * @return the date
+     */
+    public String getDate() {
+        return date;
+    }
+
+    /**
+     * @param date the date to set
+     */
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     /**
      * @return the oper
      */
@@ -111,5 +128,5 @@ public class SetBus implements Serializable{
     public void setId(int id) {
         this.id = id;
     }
-    
+
 }
