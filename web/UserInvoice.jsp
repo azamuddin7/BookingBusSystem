@@ -81,7 +81,7 @@
 						<ul>
 							<li>Welcome @user</li>
 							<li>
-								<a href="#" class="icon fa-angle-down">View Order</a>
+								<a href="#" class="icon fa-angle-down">View Invoice</a>
 								<ul>
 									<li><a href="MainPageUser.jsp">Buy Ticket</a></li>
 									<li><a href="UserProfile.jsp">My Profile</a></li>
