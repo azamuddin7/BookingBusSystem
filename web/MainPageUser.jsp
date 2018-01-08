@@ -61,10 +61,10 @@
                 
                     <div>
                         <select class="form-control" id="searchbus" name="searchbusid" required>
-                            <c:forEach items="${sessionScope.searchbus}" var="searchbus" varStatus="loop">
-                                <c:if test="${searchbus.status == 'active'}">
-                                    <option value="${searchbus.id}">${searchbus.pickup}</option>
-                                </c:if>
+                            <c:forEach items="${sessionScope.pickup}" var="pickup" varStatus="loop">
+                               <%-- <c:if test="${searchbus.status == 'active'}"> --%>
+                                    <option value="${pickup}">${pickup}</option>
+                               <%-- </c:if>--%>
                             </c:forEach>
                         </select>
 
@@ -73,10 +73,10 @@
                     <h3 style=" padding-top:10px; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; color: #333;">ARRIVAL TO</h3>
                     <div>
                         <select class="form-control" id="searchbus" name="searchbusid" required>
-                            <c:forEach items="${sessionScope.searchbus}" var="searchbus" varStatus="loop">
-                                <c:if test="${searchbus.status == 'active'}">
-                                    <option value="${searchbus.id}">${searchbus.dropoff}</option>
-                                </c:if>
+                            <c:forEach items="${sessionScope.dropoff}" var="dropoff" varStatus="loop">
+                              <%--  <c:if test="${searchbus.status == 'active'}"> --%>
+                                    <option value="${dropoff}">${dropoff}</option>
+                              <%--  </c:if> --%>
                             </c:forEach>
                         </select>
                     </div>

@@ -63,6 +63,9 @@ public class UserLogin extends HttpServlet {
             throws ServletException, IOException {
 
         User user = null;
+        
+        ArrayList<String> pickUpList=new ArrayList<String>();
+        ArrayList<String> dropOffList=new ArrayList<String>();
 
         //Get the session object
         HttpSession session = request.getSession();
@@ -102,6 +105,7 @@ public class UserLogin extends HttpServlet {
             }
 
             while (rsbus.next()) {
+                /*
                 String operator = rsbus.getString("operator");
                 String dtime = rsbus.getString("dtime");
                 String pickup = rsbus.getString("pickup");
@@ -121,15 +125,66 @@ public class UserLogin extends HttpServlet {
                 searchbus.setDate(date);
                 searchbus.setId(id);
                 busList.add(searchbus);
+                */
+                
+                /*extract pickup n dropoff n put into AL*/
+                
+                //check if bus active
+                if(rsbus.getString("status").equals("inactive") ) continue;
+                
+                System.out.println("masuk");
+                //first input
+                if(pickUpList.isEmpty() && dropOffList.isEmpty() ){
+                    pickUpList.add(rsbus.getString("pickup"));
+                    dropOffList.add(rsbus.getString("dropoff"));
+                    System.out.println("pickup:"+ rsbus.getString("pickup"));
+                    System.out.println("drop:"+ rsbus.getString("dropoff"));
+                    
+                    continue;
+                }
+                
+                //next... if not duplicate...
+                //pickUpList
+                String curP= "";
+                boolean sameP= false;
+                for(int i= 0; i<pickUpList.size(); i++){
+                    curP= pickUpList.get(i).toString();
+                    
+                    if(curP.equals(rsbus.getString("pickup")) ){
+                        sameP= true;
+                        break;
+                    }
+                }
+                if(sameP==false) { pickUpList.add(rsbus.getString("pickup")); System.out.println("pickup:"+ rsbus.getString("pickup")); }
+                
+                //dropOffList
+                String curD= "";
+                boolean sameD= false;
+                for(int i= 0; i<dropOffList.size(); i++){
+                    curD= dropOffList.get(i).toString();
+                    
+                    if(curD.equals(rsbus.getString("dropoff")) ){
+                        sameD= true;
+                        break;
+                    }
+                }
+                if(sameD==false) { dropOffList.add(rsbus.getString("dropoff"));System.out.println("drop:"+ rsbus.getString("dropoff")); }
+                
+                
             }
         } catch (SQLException ex) {
             
             out.println(ex);
         }
+        catch( NullPointerException e){
+            out.println(e);
+        }
 
         if (user != null) {
             session.setAttribute("memberprofile", user);
-            session.setAttribute("searchbus", busList);
+            //session.setAttribute("searchbus", busList);
+            session.setAttribute("pickup", pickUpList);
+            session.setAttribute("dropoff", dropOffList);
             response.sendRedirect(request.getContextPath() + "/MainPageUser.jsp");
         } else {
             response.sendRedirect(request.getContextPath() + "/index.html");
