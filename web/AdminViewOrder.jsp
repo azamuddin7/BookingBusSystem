@@ -52,16 +52,24 @@
                         <tr>
                             <th style="text-align:center">Booking ID</th>
                             <th style="text-align:center">User</th>
-                            <th style="text-align:center">Bus ID</th>       
+                            <th style="text-align:center">Bus ID</th> 
+                            <th style="text-align:center">Bus Operator</th>
+                            <th style="text-align:center">Departure</th>
+                            <th style="text-align:center">Arrival</th>
+                            <th style="text-align:center">Price</th>
                         </tr>
                         
                         <!--booking items-->
-                        <c:forEach items="${sessionScope.booking}" var="book" varStatus="loop">                    
+                        <c:forEach items="${sessionScope.bookingA}" var="book" varStatus="loop">                    
                             
                             <tr>
                                 <td style="color:black"><c:out value="${book.bookid}"/></td>
                                 <td style="color:black"><c:out value="${book.username}"/></td>
                                 <td style="color:black"><c:out value="${book.id}"/></td>
+                                <td style="color:black"><c:out value="${book.operator}"/></td>
+                                <td style="color:black"><c:out value="${book.pickup}"/></td>
+                                <td style="color:black"><c:out value="${book.dropoff}"/></td>
+                                <td style="color:black"><c:out value="${book.price}"/></td>
                             </tr>
                         
                         </c:forEach>
