@@ -83,7 +83,7 @@ public class EditBusProcessServlet extends HttpServlet {
             preparedStatement.setString(6, id);
             preparedStatement.executeUpdate();
             
-            String sqlQuery = "SELECT * FROM setbus ORDER BY id ASC";
+            String sqlQuery = "SELECT * FROM setbus ORDER BY operator ASC";
             
             preparedStatement = con.prepareStatement(sqlQuery);
             ResultSet rs = preparedStatement.executeQuery();

@@ -63,7 +63,7 @@ public class ManageDataServlet extends HttpServlet {
         
         ArrayList busList = new ArrayList();        
         
-        String sqlQuery = "SELECT * FROM setbus ORDER BY id ASC";        
+        String sqlQuery = "SELECT * FROM setbus ORDER BY operator ASC";        
         try {
             PreparedStatement preparedStatement = con.prepareStatement(sqlQuery);
             ResultSet rs = preparedStatement.executeQuery();
