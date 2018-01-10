@@ -31,7 +31,7 @@
 					<h1><a class="icon fa-home" href="MainPageAdmin.jsp"> Home</a></h1>
 					<nav id="nav">
             <ul>
-							<li>Welcome @${sessionScope.memberprofile.getFullName()}</li>
+							<li>Welcome ${sessionScope.memberprofile.getFullName()}</li>
 							<li>
 								<a href="#" class="icon fa-angle-down">Manage Booking</a>
 								<ul>
@@ -48,9 +48,12 @@
 			<!-- Banner -->
 				<section id="banner">
 					<div style=" background:#ffffff; background-color: rgba(255,255,255,0.5); width:650px; height: 475px; margin:0 auto;">
-					<h2 style="padding-top:10px; text-align: center;font-size: 3em;margin-bottom: 10px;text-transform: uppercase;font-weight: bold; color: #333;">HELLO ADMIN</h2>
+					<h2 style="padding-top:10px; text-align: center;font-size: 3em;margin-bottom: 10px;text-transform: uppercase;font-weight: bold; color: #333;">HELLO ${sessionScope.memberprofile.getFullName()}</h2>
 					<hr>
-
+                                        <br>
+                                           <img src ="${sessionScope.memberprofile.getImage()}" width ="150" style="border:3px solid black">
+                                           <br><br>
+                                           <h3><font color="black">You are looking fine today !</font></h3>
 						
 					</div>
 				</section>

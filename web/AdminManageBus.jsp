@@ -32,7 +32,6 @@
 								<a href="#" class="icon fa-angle-down">Manage Bus</a>
 								<ul>
                                                                         <li><a href="AdminViewOrderServlet">View Booking</a></li>
-									<li><a href="/ManageDataServlet">Manage Booking</a></li>
 									<li><a href="AdminProfile.jsp">My Profile</a></li>
 								</ul>
 							</li>
@@ -48,7 +47,7 @@
 
             <hr>
                 <div class="table-responsive">
-                <table >
+                <table width="80%">
                     <thead>
                         <tr>
                             <th>Index</th>
@@ -64,25 +63,25 @@
                     <tbody>
                         <c:forEach items="${sessionScope.buslist}" var="currentbus" varStatus="loop">
                         <tr>
-                            <td><c:out value="${loop.index + 1}" /></td>
+                            <th><c:out value="${loop.index + 1}" /></th>
                             
                             <c:url value="/EditBusServlet" var="displayURLEdit">
                                 <c:param name="id"   value="${currentbus.id}" ></c:param>
                             </c:url>
                             
-                            <td><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.operator}" /></a></td>   <!-- operator-->
+                            <th><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.operator}" /></a></th>   <!-- operator-->
                             
                             
-                           <td><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.dtime}" /></a></td>     <!--dtime-->
+                           <th><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.dtime}" /></a></th>     <!--dtime-->
                            
                             
-                            <td><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.pickup}" /></a></td>     <!-- pickup-->
+                            <th><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.pickup}" /></a></th>     <!-- pickup-->
                            
                             
-                            <td><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.dropoff}" /></a></td>     <!-- dropoff-->
+                            <th><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.dropoff}" /></a></th>     <!-- dropoff-->
                             
                             
-                            <td><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.price}" /></a></td>     <!-- price-->
+                            <th><a href="<c:out value='${displayURLEdit}' />"><c:out value="${currentbus.price}" /></a></th>     <!-- price-->
                             
                             
                             
@@ -91,36 +90,37 @@
                                 <c:url value="/DeactiveBusServlet" var="displayURLDeactive">
                                     <c:param name="id"   value="${currentbus.id}" />
                                 </c:url>
-                                <td><a href="<c:out value='${displayURLDeactive}' />"><c:out value="${currentbus.status}" /></a></td>
+                                <th><a href="<c:out value='${displayURLDeactive}' />"><c:out value="${currentbus.status}" /></a></th>
                             </c:if>
                                 
                             <c:if test="${currentbus.status == 'deactive'}">
                                 <c:url value="/ActiveBusServlet" var="displayURLActive">
                                     <c:param name="id"   value="${currentbus.id}" />
                                 </c:url>
-                                <td><a href="<c:out value='${displayURLActive}' />"><c:out value="${currentbus.status}" /></a></td>
+                                <th><a href="<c:out value='${displayURLActive}' />"><c:out value="${currentbus.status}" /></a></th>
                             </c:if>
                             
                             <c:url value="/DeleteBusServlet" var="displayURLDelete">
                                 <c:param name="id"   value="${currentbus.id}" />
                             </c:url>
-                            <td><a href="<c:out value='${displayURLDelete}' />">Delete</a></td>
+                            <th><a href="<c:out value='${displayURLDelete}' />">Delete</a></th>
                         </tr>
                         </c:forEach>
                     </tbody> 
                 </table>    
             </div> <!-- table-responsive -->              
             <hr>
+            <br><br><br>
             <h2>Add New Bus</h2>
                 <form action="/BookingBusSystem/AddBusServlet" method="post">
                 <fieldset>
-
+               
                     <p>Operator</p>
                     <input  id="operator" name="operator" placeholder="Operator Name" type="text" required>
-
+               
                     <p>Departure Time</p>
                     <input id="dtime" name="dtime" placeholder="Departure Time" type="text" required>
-
+                
                     <p>Pickup Point</p>
                     <input id="pickup" name="pickup" placeholder="Pickup Point" type="text" required>
 
