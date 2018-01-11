@@ -28,6 +28,9 @@
 
     </head>
     <body class="landing">
+        <c:if test="${sessionScope.memberprofile == null}">
+                <c:redirect url="index.html"/>
+            </c:if>
         <div id="page-wrapper">
 
             <!-- Header -->
@@ -60,7 +63,7 @@
                 <h3 style=" padding-top:5px; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; color: #333;">DEPARTURE FROM</h3>
                 
                     <div>
-                        <select class="form-control" id="searchbus" name="searchbusid" required>
+                        <select class="form-control" id="searchbus" name="pickup" required>
                             <c:forEach items="${sessionScope.pickup}" var="pickup" varStatus="loop">
                                <%-- <c:if test="${searchbus.status == 'active'}"> --%>
                                     <option value="${pickup}">${pickup}</option>
@@ -72,7 +75,7 @@
 
                     <h3 style=" padding-top:10px; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px; color: #333;">ARRIVAL TO</h3>
                     <div>
-                        <select class="form-control" id="searchbus" name="searchbusid" required>
+                        <select class="form-control" id="searchbus" name="dropoff" required>
                             <c:forEach items="${sessionScope.dropoff}" var="dropoff" varStatus="loop">
                               <%--  <c:if test="${searchbus.status == 'active'}"> --%>
                                     <option value="${dropoff}">${dropoff}</option>

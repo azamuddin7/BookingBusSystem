@@ -44,7 +44,9 @@
     </head>
     <body class="landing">
         <div id="page-wrapper">
-
+            <c:if test="${sessionScope.memberprofile == null}">
+                <c:redirect url="index.html"/>
+            </c:if>
             <!-- Header -->
             <header id="header" class="alt">
                 <h1><a class="icon fa-home" href="MainPageUser.jsp"> Home</a></h1>

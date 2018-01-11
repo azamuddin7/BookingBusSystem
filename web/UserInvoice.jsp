@@ -72,6 +72,9 @@
 		</style>
 	</head>
 	<body class="landing loaded">
+            <c:if test="${sessionScope.memberprofile == null}">
+                <c:redirect url="index.html"/>
+            </c:if>
 		<div id="page-wrapper" style="height: 800px;">
 
 			<!-- Header -->

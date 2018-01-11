@@ -64,7 +64,7 @@ public class UserSeatBusServlet extends HttpServlet {
         User user = (User) session.getAttribute("memberprofile");
         String username = user.getUsername();
         String status = "Pending";
-        String busId = request.getParameter("id");
+        String busId = request.getParameter("busId");
         RequestBus book = new RequestBus();
         String seats[] = request.getParameterValues("seat");
 
@@ -74,19 +74,17 @@ public class UserSeatBusServlet extends HttpServlet {
         book.setSeat(seats);
         // ArrayList seatList = new ArrayList();        
         PrintWriter out = response.getWriter();
-        out.println(book.getSeat());
-        String sqlQuery = "insert into requestbus (seat, username, status, id) values (?, ?, ?, ?)";
+        out.println(book.getId());
+        String sqlInsert = "insert into requestbus (seat, username, status, id) values (?, ?, ?, ?)";
 
         try {
             /* TODO output your page here. You may use following sample code. */
-            PreparedStatement preparedStatement = con.prepareStatement(sqlQuery);
+            PreparedStatement preparedStatement = con.prepareStatement(sqlInsert);
             preparedStatement.setString(1, book.getSeat());
             preparedStatement.setString(2, book.getUsername());
             preparedStatement.setString(3, book.getStatus());
             preparedStatement.setString(4, book.getId());
-
             preparedStatement.executeUpdate();
-
         } catch (SQLException ex) {
 
             out.println(ex);
