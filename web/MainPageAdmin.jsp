@@ -41,7 +41,7 @@
             <ul>
 							<li>Welcome ${sessionScope.memberprofile.getFullName()}</li>
 							<li>
-								<a href="#" class="icon fa-angle-down">Manage Booking</a>
+								<a href="#" class="icon fa-angle-down">Home Page</a>
 								<ul>
 									<li><a href="AdminViewOrderServlet">View Booking</a></li>
 									<li><a href="/BookingBusSystem/ManageDataServlet">Manage Bus</a></li>

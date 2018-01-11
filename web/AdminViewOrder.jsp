@@ -32,7 +32,7 @@
                                     <a href="#" class="icon fa-angle-down">View Booking</a>
                                     <ul>
                                             <li><a href="AdminAddBus.jsp">Manage Bus</a></li>
-                                            <li><a href="MainPageAdmin.jsp">Manage Booking</a></li>
+                                            <li><a href="MainPageAdmin.jsp">Home Page</a></li>
                                             <li><a href="AdminProfile.jsp">My Profile</a></li>
                                     </ul>
                                 </li>
