@@ -102,7 +102,7 @@ public class UpdateProfileServlet extends HttpServlet {
             //only session
             HttpSession session = request.getSession();
             session.setAttribute("memberprofile", user);
-            response.sendRedirect(request.getContextPath() + "/MainPageUser.jsp");
+            response.sendRedirect(request.getContextPath() + "/UserProfile.jsp");
         }
         catch (SQLException ex) {   
             PrintWriter out = response.getWriter();
