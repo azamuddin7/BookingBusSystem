@@ -4,8 +4,16 @@
     Author     : Ahmad Azamuddin
 --%>
 
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="bean.User" %>
+<%@ page import="bean.SetBus" %>
+<%@ page import="java.util.ArrayList" %>
+
+<c:if test="${sessionScope.memberprofile == null}">
+    <% response.sendRedirect(request.getContextPath() + "/terminate.html"); %>
+</c:if>
 <!DOCTYPE html>
 <html>
 	<head>
