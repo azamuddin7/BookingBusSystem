@@ -20,7 +20,7 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="alpha/css/ie8.css" /><![endif]-->
 		<link rel="stylesheet" href="alpha/css/normalize.css">
 		<link rel="stylesheet" href="alpha/css/loading.css">
-		<script src="alpha/js/modernizr-2.6.2.min.js"></script>
+
                 <style type="text/css">
 			.back-link a {
 				color: #4ca340;
@@ -75,7 +75,7 @@
             <c:if test="${sessionScope.memberprofile == null}">
                 <c:redirect url="index.html"/>
             </c:if>
-		<div id="page-wrapper" style="height: 800px;">
+		<div id="page-wrapper dvContainer" style="height: 800px;">
 
 			<!-- Header -->
 				<header id="header" class="alt">
@@ -100,7 +100,7 @@
 					<h2>Invoice</h2>
 					<hr>
 					<br>
-                                        <div class="container">
+                                        <div class="container printableArea">
                                         <div class="row">
                                             <div class="col-xs-12">
                                                     <div class="row">
@@ -186,13 +186,9 @@
                                                             </table>
                                                     </div> 
                                             </div>
-                                            </div><a href="UserThankYou.jsp" class="button button-light special" style="float:right;">CONTINUE</a>
+                                            </div><input type="submit" class="button button-light special" value="PRINT" style=" border-left-width: 100px; margin-left: 480px; onClick="window.print()"/><a href="UserThankYou.jsp" class="button button-light special" style="float:right;">CONTINUE</a>
                                             </div>
                                             </div>
-                                            
-                                            
-					
-                                            
                                             <nav class="back-link">
                                                     <span class="nav-previous"></span>
                                             </nav><!-- .nav-single -->
@@ -232,6 +228,5 @@
 			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 			<script>window.jQuery || document.write('<script src="alpha/js/jquery-1.9.1.min.js"><\/script>')</script>
 			<script src="alpha/js/loading.js"></script>
-
 	</body>
 </html>
