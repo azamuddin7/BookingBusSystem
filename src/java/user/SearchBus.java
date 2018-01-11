@@ -33,7 +33,7 @@ public class SearchBus extends HttpServlet {
     {
         String driver = "com.mysql.jdbc.Driver";
 
-        String dbName = "cash";
+        String dbName = "bus";
         String url = "jdbc:mysql://localhost/" + dbName + "?";
         String userName = "root";
         String password = "";
@@ -61,27 +61,29 @@ public class SearchBus extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("memberprofile");
         String login = user.getUsername();
+        String pickup = request.getParameter("pickup");
+        String dropoff = request.getParameter("dropoff");
         ArrayList busList = new ArrayList();
 
-        String sqlQuery = "SELECT * FROM setbus ORDER BY pickup ASC";
+        String sqlQuery = "SELECT * FROM setbus where pickup = ? and dropoff = ? ORDER BY pickup ASC";
 
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
 
             try {
                 PreparedStatement preparedStatement = con.prepareStatement(sqlQuery);
+                preparedStatement.setString(1,pickup);
+                preparedStatement.setString(2,dropoff);
                 ResultSet rs = preparedStatement.executeQuery();
 
                 while (rs.next()) {
+                    
                     String operator = rs.getString("operator");
                     String dtime = rs.getString("dtime");
-                    String pickup = rs.getString("pickup");
-                    String dropoff = rs.getString("dropoff");
                     double price = rs.getDouble("price");
                     String status = rs.getString("status");
-                    String date = rs.getString("date");
                     int id = rs.getInt("id");
-
+                    
                     SetBus searchbus = new SetBus();
                     searchbus.setOperator(operator);
                     searchbus.setDtime(dtime);
@@ -89,12 +91,11 @@ public class SearchBus extends HttpServlet {
                     searchbus.setDropoff(dropoff);
                     searchbus.setPrice(price);
                     searchbus.setStatus(status);
-                    searchbus.setDate(date);
                     searchbus.setId(id);
                     busList.add(searchbus);
                 }
             } catch (SQLException ex) {
-                
+                out.println(ex);
             }
 
             session.setAttribute("searchbus", busList);

@@ -18,7 +18,7 @@
             #viewbus {
                 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
                 border-collapse: collapse;
-                width: 100%;
+
             }
 
             #viewbus td, #viewbus th {
@@ -50,7 +50,9 @@
     </head>
     <body class="landing">
         <div id="page-wrapper">
-
+            <c:if test="${sessionScope.memberprofile == null}">
+                <c:redirect url="index.html"/>
+            </c:if>
             <!-- Header -->
             <header id="header" class="alt">
                 <h1><a class="icon fa-home" href="MainPageUser.jsp"> Home</a></h1>
@@ -74,7 +76,7 @@
             <section id="banner">
                 <h2>View Bus</h2>
                 <hr>
-                
+
                 <table id="viewbus">
                     <tr>
                         <th>Operator</th>
@@ -84,24 +86,21 @@
                         <th>Price</th>
                         <th>
                     </tr>
-                        </select>
-                     
-                        <c:forEach items="${sessionScope.searchbus}" var="currentbus" varStatus="loop">
-                    <tr>
-                        <td><c:if test="${searchbus.pickup == 'KL'}"/></td>
-                        <td><c:out value="${currentbus.operator}" /></td>
-                        <td><c:out value="${currentbus.dtime}" /></td>
-                        <td><c:out value="${currentbus.pickup}" /></td>
-                        <td><c:out value="${currentbus.dropoff}" /></td>
-                        <td><c:out value="${currentbus.id}" />${currentbus.id}</td>
-                        <c:url value="/UserSeatBusServlet" var="displayURLSelect">
-                            <c:param name="id"   value="${currentbus.id}" />
+                    
+                    <c:forEach items="${sessionScope.searchbus}" var="currentbus" varStatus="loop">
+                        <tr>
+                            <td>${currentbus.operator}</td>
+                            <td>${currentbus.dtime}</td>
+                            <td>${currentbus.pickup}</td>
+                            <td>${currentbus.dropoff}</td>
+                            <td>${currentbus.id}</td>
+                            <c:url value="/UserSeatBus.jsp" var="displayURLSelect">
+                                <c:param name="id"   value="${currentbus.id}" />
                             </c:url>
-                        <td><a href="<c:out value='${displayURLSelect}' />">Select</a></td>
-                    </tr>
+                            <td><a href="<c:out value='${displayURLSelect}' />">Select</a></td>
+                        </tr>
                     </c:forEach>
-                        <td><a href="UserSeatBus.jsp" class="button">Select</a></td>
-                   
+
 
                 </table>
                 <hr>

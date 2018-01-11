@@ -34,6 +34,9 @@
 		</style>
 	</head>
 	<body class="landing">
+            <c:if test="${sessionScope.memberprofile == null}">
+                <c:redirect url="index.html"/>
+            </c:if>
 		<div id="page-wrapper">
 
 			<!-- Header -->
