@@ -23,12 +23,12 @@
 					<h1><a class="icon fa-home" href="MainPageAdmin.jsp"> Home</a></h1>
 					<nav id="nav">
 						<ul>
-							<li>Welcome @${sessionScope.memberprofile.getFullName()}</li>
+							<li>Welcome ${sessionScope.memberprofile.getFullName()}</li>
 							<li>
 								<a href="#" class="icon fa-angle-down">My Profile</a>
 								<ul>
                                                                         <li><a href="AdminViewOrderServlet">View Booking</a></li>
-									<li><a href="MainPageAdmin.html">Manage Booking</a></li>
+									<li><a href="/BookingBusSystem/ManageDataServlet">Manage Bus</a></li>
 								</ul>
 							</li>
 							<li><a href="logout.jsp" class="button">Log Out</a></li>
@@ -40,7 +40,7 @@
 				<section id="banner">
 					<h2>My Profile</h2>
 					<hr>
-						<img src ="${sessionScope.memberprofile.getImage()}" width ="150">
+						<img src ="${sessionScope.memberprofile.getImage()}" width ="150" style="border:3px solid black">
                                                 <form method="post" action="AdminUpdateProfileServlet" style=" width: 100%;">
 						<table style=" background:#ffffff; background-color:rgb(0, 153, 204); width:650px; height: 205px; margin:0 auto; color: #black">
 							<tr>
@@ -58,6 +58,7 @@
 							<td><b><input type="text" name="password" id="password" value="${sessionScope.memberprofile.getPassword()}"/>
 							</tr>
 						</table>
+                                                        <br>
                                                         <input class="button alt icon fa-check" style ="background-color: white;color: black; border: 2px solid #4CAF50; " type="submit" class="button" value="Update"/>
                                                 </form>
 						<br>
