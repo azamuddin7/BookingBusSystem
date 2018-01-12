@@ -12,12 +12,8 @@ import java.io.Serializable;
  * @author Harris D.Ilham Adni
  */
 public class Order implements Serializable {
-    private String username, pickup, dropoff, bookid, id, operator, seat;
-    private double price;
-    
-    
-    //constructor 6 param, set all attr.
-    public Order(String username, String pickup, String dropoff, String bookid, String id, String operator, double price){
+//constructor 6 param, set all attr.
+    public Order(String username, String pickup, String dropoff, String bookid, String id, String operator, double price, String status){
         this.username= username;
         this.pickup= pickup;
         this.dropoff= dropoff;
@@ -25,6 +21,24 @@ public class Order implements Serializable {
         this.id= id;
         this.operator= operator;
         this.price= price;
+        this.status = status;
+    }
+    
+    private String username, pickup, dropoff, bookid, id, operator, seat, status;
+    private double price;
+    
+    /**
+     * @return the status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    /**
+     * @param status the status to set
+     */
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     /**

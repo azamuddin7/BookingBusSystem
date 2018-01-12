@@ -52,11 +52,12 @@
                         <tr>
                             <th style="text-align:center">Booking ID</th>
                             <th style="text-align:center">User</th>
-                            <th style="text-align:center">Bus ID</th> 
+                           <!-- <th style="text-align:center">Bus ID</th> -->
                             <th style="text-align:center">Bus Operator</th>
                             <th style="text-align:center">Departure</th>
                             <th style="text-align:center">Arrival</th>
                             <th style="text-align:center">Price</th>
+                            <th style="text-align:center">Status</th>
                         </tr>
                         
                         <!--booking items-->
@@ -65,16 +66,38 @@
                             <tr>
                                 <td style="color:black"><c:out value="${book.bookid}"/></td>
                                 <td style="color:black"><c:out value="${book.username}"/></td>
-                                <td style="color:black"><c:out value="${book.id}"/></td>
+                               <!-- <td style="color:black"><c:out value="${book.id}"/></td> -->
                                 <td style="color:black"><c:out value="${book.operator}"/></td>
                                 <td style="color:black"><c:out value="${book.pickup}"/></td>
                                 <td style="color:black"><c:out value="${book.dropoff}"/></td>
                                 <td style="color:black"><c:out value="${book.price}"/></td>
+                                
+                                <c:if test="${book.status == 'Pending'}">
+                                    <c:url value="/RequestReceivedServlet" var="displayURLCollected">
+                                        <c:param name="id"   value="${book.bookid}" />
+                                    </c:url>
+                                    <td><a href="<c:out value='${displayURLCollected}' />"><c:out value="${book.status}"/></a></td>
+                                </c:if>
+                                <c:if test="${book.status == 'Collected'}">
+                                    <c:url value="/RequestCancelServlet" var="displayURLCancel">
+                                        <c:param name="id"   value="${book.bookid}" />
+                                    </c:url>
+                                    <td><a href="<c:out value='${displayURLCancel}' />"><c:out value="${book.status}"/></a></td>
+                                </c:if>
+                                <c:if test="${book.status == 'Cancel'}">
+                                    <c:url value="/RequestPendingServlet" var="displayURLPending">
+                                        <c:param name="id"   value="${book.bookid}" />
+                                    </c:url>
+                                    <td><a href="<c:out value='${displayURLPending}' />"><c:out value="${book.status}"/></a></td>
+                                </c:if>
                             </tr>
                         
                         </c:forEach>
                         
                     </table>
+                    <br><br>
+                    <input type="submit" class="button" value="Download" onClick="window.print()"/>
+
                     
                     
             </section> 

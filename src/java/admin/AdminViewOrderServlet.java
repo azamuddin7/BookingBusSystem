@@ -68,7 +68,7 @@ public class AdminViewOrderServlet extends HttpServlet {
         
         //double price;
         //int bookid, id;
-        String username = "", pickup = "", dropoff = "", bookid = "", id = "", price = "", operator = "";
+        String username = "", pickup = "", dropoff = "", bookid = "", id = "", price = "", operator = "", status="";
        
         ArrayList booking= new ArrayList();
         
@@ -99,6 +99,7 @@ public class AdminViewOrderServlet extends HttpServlet {
                 bookid= rs.getString("bookid");
                 username= rs.getString("username");
                 id= rs.getString("id");
+                status= rs.getString("status");
                 
                 /*GET DATA TABLE SETBUS*/
                 //get bus data from setbus using the id
@@ -116,7 +117,7 @@ public class AdminViewOrderServlet extends HttpServlet {
                         operator= rs2.getString("operator");
                         
                         //create Order bean
-                        Order order= new Order(username, pickup, dropoff, bookid, id, operator, Double.parseDouble(price));
+                        Order order= new Order(username, pickup, dropoff, bookid, id, operator, Double.parseDouble(price), status);
                         
                         //put into arraylist
                         booking.add(order);
