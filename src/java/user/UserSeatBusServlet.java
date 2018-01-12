@@ -91,7 +91,7 @@ public class UserSeatBusServlet extends HttpServlet {
         }
 
         session.setAttribute("book", book);
-        response.sendRedirect(request.getContextPath() + "/UserViewOrder.jsp");// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+        response.sendRedirect(request.getContextPath() + "/UserViewOrder");// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
     }
 

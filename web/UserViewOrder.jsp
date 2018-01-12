@@ -1,4 +1,4 @@
-<%-- 
+    <%-- 
     Document   : UserViewOrder
     Created on : Jan 1, 2018, 5:29:17 PM
     Author     : irsya
@@ -67,25 +67,6 @@
                 <div class="container">
                     <div class="row">
                         <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3" style="padding-left: 35px; margin-left: 110px; width: 852px;"> 
-                            <div class="row">
-                                <div class="col-xs-6 col-sm-6 col-md-6" style="text-align:left;height: 120px;">
-                                    <address>
-                                        <h3 style="margin-bottom: 0px;"><strong>Biling Details</strong></h3>
-                                        <strong>Name: ${sessionScope.memberprofile.getFullName()} </strong>
-                                        <br>
-                                        <strong>Email: ${sessionScope.memberprofile.getEmail()} </strong>
-                                        <br>
-                                        <strong>Date: 10th January 2018</strong>
-                                        <br>
-                                    </address>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-6 text-right" style="height:72px;padding-right: 20px;;">
-                                    <address>
-                                        <h3><strong>#1</strong></h3>
-                                        <br>
-                                    </address>
-                                </div>
-                            </div>
                             <div class="row">
                                 <div class="text-center" style="padding-left: 372px;padding-right: 372px; padding-bottom: 10px;">
                                     <h1>RECEIPT</h1>
