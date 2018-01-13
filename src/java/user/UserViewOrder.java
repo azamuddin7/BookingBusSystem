@@ -62,7 +62,11 @@ public class UserViewOrder extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+<<<<<<< HEAD
         String username = "", pickup = "", dropoff = "", bookid = "", id = "", price = "", operator = "", seat = "", status = "";
+=======
+        String username = "", pickup = "", dropoff = "", bookid = "", id = "", price = "", operator = "", seat = "",status= "";
+>>>>>>> ccdd9be2da0474e64183acdff0fe8a0c485c2054
         double total=0;
         
         ArrayList<Order> booking= new ArrayList<Order>();
@@ -111,7 +115,11 @@ public class UserViewOrder extends HttpServlet {
                         
                         
                         //create Order bean
+<<<<<<< HEAD
                         Order order= new Order(username, pickup, dropoff, bookid, id, operator, Double.parseDouble(price), status);
+=======
+                        Order order= new Order(username, pickup, dropoff, bookid, id, operator, Double.parseDouble(price),status);
+>>>>>>> ccdd9be2da0474e64183acdff0fe8a0c485c2054
                         order.setSeat(seat);
                         
                         //put into arraylist

@@ -23,6 +23,8 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+CREATE DATABASE IF NOT EXISTS `bus` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `bus`;
 
 --
 -- Table structure for table `requestbus`
