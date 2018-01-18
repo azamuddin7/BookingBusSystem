@@ -77,9 +77,12 @@
 		</style>
 	</head>
 	<body>
+            
             <c:if test="${sessionScope.memberprofile == null}">
                 <c:redirect url="index.html"/>
             </c:if>
+            
+            
 		<div id="page-wrapper dvContainer" style="height: 800px;">
 
 			<!-- Header -->
@@ -134,64 +137,63 @@
                                                             </div>
                                                             <div class="panel-body">
                                                                     <div class="table-responsive">
-                                                                            <table class="table table-condensed" action="UserInvoice">
-                                                                                    <thead>
-                                                                    <tr>
-                                                                        <td class="text-left"><strong>Operator</strong></td>
-                                                                        <td class="text-center"><strong>Seat</strong></td>
-                                                                        <td class="text-center"><strong>Departure</strong></td>
-                                                                        <td class="text-center"><strong>Pickup</strong></td>
-                                                                        <td class="text-center"><strong>Drop Off</strong></td>
-                                                                        <td class="text-center"><strong>Price</strong></td>
-                                                                    </tr>
-                                                                        </thead>
-                                                                    <tbody>
-                                                                            <!-- foreach ($order->lineItems as $line) or some such thing here -->
-                                                                    <tr>
-                                                                            <td class="col-md-2 text-left"></td>
-                                                                            <td class="col-md-1 text-center"></td>
-                                                                            <td class="col-md-2 text-center"></td>
-                                                                            <td class="col-md-2 text-center"></td>
-                                                                            <td class="col-md-2 text-center"></td>
-                                                                            <td class="col-md-1 text-center"></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                            <td class="col-md-2 text-left"></td>
-                                                                            <td class="col-md-1 text-center"></td>
-                                                                            <td class="col-md-2 text-center"></td>
-                                                                            <td class="col-md-2 text-center"></td>
-                                                                            <td class="col-md-2 text-center"></td>
-                                                                            <td class="col-md-1 text-center"></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                            <td class="col-md-2 text-left"></td>
-                                                                            <td class="col-md-1 text-center"></td>
-                                                                            <td class="col-md-2 text-center"></td>
-                                                                            <td class="col-md-2 text-center"></td>
-                                                                            <td class="col-md-2 text-center"></td>
-                                                                            <td class="col-md-1 text-center"></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                            <td class="thick-line"></td>
-                                                                            <td class="thick-line"></td>
-                                                                            <td class="thick-line"></td>
-                                                                            <td class="thick-line"></td>
-                                                                            <td class="thick-line text-right"><strong>Subtotal: RM</strong></td>
-                                                                            <td class="thick-line text-center"></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                            <td class="no-line"></td>
-                                                                            <td class="no-line"></td>
-                                                                            <td class="no-line"></td>
-                                                                            <td class="no-line"></td>
-                                                                            <td class="no-line text-right"><strong>Total: RM</strong></td>
-                                                                            <td class="no-line text-center"></td>
-                                                                    </tr>
-                                                                    </tbody>
-                                                            </table>
+                                                                            <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Operator</th>
+                                            <th class="text-center">Seat</th>
+                                            <th class="text-center">Departure</th>
+                                            <th class="text-center">Pickup</th>
+                                            <th class="text-center">Drop Off</th>
+                                            <th class="text-center">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <c:forEach items="${sessionScope.bookingU}" var="bookU" varStatus="loop">
+
+                                            <tr>
+                                                <td style="color:black"><c:out value="${bookU.operator}"/></td>
+                                                <td style="color:black"><c:out value="${bookU.seat}"/></td>
+                                                <td style="color:black"><c:out value="time"/></td>
+                                                <td style="color:black"><c:out value="${bookU.pickup}"/></td>
+                                                <td style="color:black"><c:out value="${bookU.dropoff}"/></td>
+                                                <td style="color:black"><c:out value="${bookU.price}"/></td>
+                                            </tr>
+
+                                        </c:forEach>
+
+                                        <!--
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="text-right">
+                                            
+                                                <strong>Subtotal: RM </strong>
+                                            
+                                            </td>
+                                            <td class="text-center">
+                                            <p>
+                                                <strong></strong>
+                                            </p>
+                                            </td>
+                                        </tr>
+                                        -->
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="text-right"><h4><strong>Total: RM <c:out value="${sessionScope.total}"/></strong></h4></td>
+                                            <td class="text-center text-danger"><strong></strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                                                     </div> 
                                             </div>
-                                            </div><input type="submit" class="button button-light special" value="PRINT" style=" border-left-width: 100px; margin-left: 480px; onClick="window.print()"/><a href="UserThankYou.jsp" class="button button-light special" style="float:right;">CONTINUE</a>
+                                            </div><input type="submit" class="button button-light special" value="PRINT" style=" border-left-width: 100px; margin-left: 480px; "onClick="window.print()"/><a href="UserThankYou.jsp" class="button button-light special" style="float:right;">CONTINUE</a>
                                             </div>
                                             </div>
                                             <nav class="back-link">
@@ -220,7 +222,7 @@
 					</ul>
 				</footer>
 				
-	
+                
 				
 		<!-- Scripts -->
 			<script src="alpha/js/jquery.min.js"></script>
