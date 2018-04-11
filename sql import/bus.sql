@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2018 at 06:38 PM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.8
+-- Generation Time: Apr 10, 2018 at 06:00 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -23,20 +23,31 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-CREATE DATABASE IF NOT EXISTS `bus` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `bus`;
+
+--
+-- Table structure for table `paymentdetails`
+--
+
+CREATE TABLE `paymentdetails` (
+  `cardNo` varchar(255) NOT NULL,
+  `cardName` varchar(255) NOT NULL,
+  `cardExpiry` varchar(255) NOT NULL,
+  `cardCVV` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `requestbus`
 --
 
 CREATE TABLE `requestbus` (
-  `bookid` int(11) NOT NULL,
-  `username` varchar(10) NOT NULL DEFAULT '',
-  `seat` varchar(10) NOT NULL DEFAULT '',
-  `status` varchar(15) NOT NULL DEFAULT '',
-  `id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `bookid` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `seat` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `id` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -45,21 +56,14 @@ CREATE TABLE `requestbus` (
 --
 
 CREATE TABLE `setbus` (
-  `id` int(11) NOT NULL,
-  `operator` varchar(30) NOT NULL,
-  `dtime` varchar(10) NOT NULL,
-  `pickup` varchar(30) NOT NULL,
-  `dropoff` varchar(30) NOT NULL,
-  `price` decimal(18,2) NOT NULL,
-  `status` varchar(10) NOT NULL DEFAULT 'active'
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `setbus`
---
-
-INSERT INTO `setbus` (`id`, `operator`, `dtime`, `pickup`, `dropoff`, `price`, `status`) VALUES
-(27, 'Citylink', '8:30', 'KL', 'Larkin', '35.00', 'active');
+  `id` varchar(255) NOT NULL,
+  `operator` varchar(255) NOT NULL,
+  `dtime` varchar(255) NOT NULL,
+  `pickup` varchar(255) NOT NULL,
+  `dropoff` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -68,62 +72,14 @@ INSERT INTO `setbus` (`id`, `operator`, `dtime`, `pickup`, `dropoff`, `price`, `
 --
 
 CREATE TABLE `user` (
-  `username` varchar(10) NOT NULL DEFAULT '',
-  `password` varchar(10) NOT NULL DEFAULT '',
-  `usertype` varchar(6) NOT NULL DEFAULT '',
-  `fullname` varchar(25) NOT NULL DEFAULT '',
-  `email` varchar(50) DEFAULT NULL,
-  `image` varchar(30) NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`username`, `password`, `usertype`, `fullname`, `email`, `image`) VALUES
-('q', 'q', 'client', 'Mr Queue', NULL, 'default.jpg'),
-('admin', 'q', 'admin', 'Mr. ADMIN bin', NULL, 'images/test.png'),
-('Ajam', '123', 'client', 'Ahmad Azamuddin', 'azamhasni7@gmail.com', 'images/test.png'),
-('test', '1234', 'client', 'Ahmad Azamuddin', 'azam@gmail.com', 'images/test.png');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `requestbus`
---
-ALTER TABLE `requestbus`
-  ADD PRIMARY KEY (`bookid`),
-  ADD KEY `id` (`id`),
-  ADD KEY `username` (`username`);
-
---
--- Indexes for table `setbus`
---
-ALTER TABLE `setbus`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`username`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `requestbus`
---
-ALTER TABLE `requestbus`
-  MODIFY `bookid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
---
--- AUTO_INCREMENT for table `setbus`
---
-ALTER TABLE `setbus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;COMMIT;
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `userType` varchar(255) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

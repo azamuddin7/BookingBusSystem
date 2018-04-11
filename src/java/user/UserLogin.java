@@ -86,26 +86,26 @@ public class UserLogin extends HttpServlet {
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
             ResultSet rs = preparedStatement.executeQuery();
-            ResultSet rsbus = preparedStatementbus.executeQuery();
+            //ResultSet rsbus = preparedStatementbus.executeQuery();
 
             while (rs.next()) {
                 userType = rs.getString("usertype");
                 fullName = rs.getString("fullname");
-                image = rs.getString("image");
+                //image = rs.getString("image");
                 password = rs.getString("password");
-                email = rs.getString("email");
+                //email = rs.getString("email");
 
                 user = new User();
                 user.setUsername(username);
-                user.setFullName(fullName);
+                //user.setFullName(fullName);
                 user.setUserType(userType);
                 user.setPassword(password);
-                user.setEmail(email);
-                user.setImage(image);
+                //user.setEmail(email);
+                //user.setImage(image);
             }
 
-            while (rsbus.next()) {
-                /*
+            /*while (rsbus.next()) {
+                
                 String operator = rsbus.getString("operator");
                 String dtime = rsbus.getString("dtime");
                 String pickup = rsbus.getString("pickup");
@@ -125,9 +125,9 @@ public class UserLogin extends HttpServlet {
                 searchbus.setDate(date);
                 searchbus.setId(id);
                 busList.add(searchbus);
-                */
                 
-                /*extract pickup n dropoff n put into AL*/
+                
+                extract pickup n dropoff n put into AL
                 
                 //check if bus active
                 if(rsbus.getString("status").equals("inactive") ) continue;
@@ -168,10 +168,9 @@ public class UserLogin extends HttpServlet {
                         break;
                     }
                 }
-                if(sameD==false) { dropOffList.add(rsbus.getString("dropoff"));System.out.println("drop:"+ rsbus.getString("dropoff")); }
-                
-                
-            }
+                if(sameD==false) { dropOffList.add(rsbus.getString("dropoff"));System.out.println("drop:"+ rsbus.getString("dropoff")); }               
+                */
+            
         } catch (SQLException ex) {
             
             out.println(ex);
@@ -183,8 +182,8 @@ public class UserLogin extends HttpServlet {
         if (user != null) {
             session.setAttribute("memberprofile", user);
             //session.setAttribute("searchbus", busList);
-            session.setAttribute("pickup", pickUpList);
-            session.setAttribute("dropoff", dropOffList);
+            //session.setAttribute("pickup", pickUpList);
+            //session.setAttribute("dropoff", dropOffList);
             response.sendRedirect(request.getContextPath() + "/MainPageUser.jsp");
         } else {
             response.sendRedirect(request.getContextPath() + "/index.html");
