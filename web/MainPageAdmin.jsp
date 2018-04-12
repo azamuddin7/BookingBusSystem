@@ -11,9 +11,11 @@
 <%@ page import="bean.SetBus" %>
 <%@ page import="java.util.ArrayList" %>
 
+<%--
 <c:if test="${sessionScope.memberprofile == null}">
     <% response.sendRedirect(request.getContextPath() + "/terminate.html"); %>
-</c:if>
+</c:if>--%>
+
 <!DOCTYPE html>
 <html>
 	<head>
